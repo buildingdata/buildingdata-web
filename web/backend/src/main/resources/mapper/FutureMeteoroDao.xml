@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.FutureMeteoroLogicalDao">
+
+    <select id="queryFuture45050ById" resultType="com.mobisys.building.entity.FutureMeteoroLogicalInfo">
+        SELECT *
+        FROM t_future_meteorological_p45_2050
+        WHERE
+            station_id = #{stationId}
+            <if test="month != null">
+                and month = #{month}
+            </if>
+            <if test="day != null">
+                and day = #{day}
+            </if>
+
+    </select>
+    <select id="queryFuture45099ById" resultType="com.mobisys.building.entity.FutureMeteoroLogicalInfo">
+        SELECT *
+        FROM t_future_meteorological_p45_2099
+        WHERE
+        station_id = #{stationId}
+        <if test="month != null">
+            and month = #{month}
+        </if>
+        <if test="day != null">
+            and day = #{day}
+        </if>
+    </select>
+    <select id="queryFuture85050ById" resultType="com.mobisys.building.entity.FutureMeteoroLogicalInfo">
+        SELECT *
+        FROM t_future_meteorological_p85_2050
+        WHERE
+        station_id = #{stationId}
+        <if test="month != null">
+            and month = #{month}
+        </if>
+        <if test="day != null">
+            and day = #{day}
+        </if>
+    </select>
+    <select id="queryFuture85099ById" resultType="com.mobisys.building.entity.FutureMeteoroLogicalInfo">
+        SELECT *
+        FROM t_future_meteorological_p85_2099
+        WHERE
+        station_id = #{stationId}
+        <if test="month != null">
+            and month = #{month}
+        </if>
+        <if test="day != null">
+            and day = #{day}
+        </if>
+    </select>
+    <insert id="insert_t_future_meteorological_p45_2050">
+        INSERT INTO
+            t_future_meteorological_p45_2050(station_id, month , day , time , pressure, dry_temper, relative_solid, point_temper, wind_direction, wind_speed, Cloudiness, sun_sum_radiation, direct_radiation, scatter_radiation)
+        VALUES
+        (#{stationId}, #{month}, #{day}, #{time}, #{pressure}, #{dryTemper}, #{relativeSolid}, #{pointTemper}, #{windDirection}, #{windSpeed}, #{Cloudiness},  #{sunSumRadiation}, #{directRadiation}, #{scatterRadiation})
+    </insert>
+    <insert id="insert_t_future_meteorological_p45_2099">
+        INSERT INTO
+            t_future_meteorological_p45_2099(station_id, month , day , time , pressure, dry_temper, relative_solid, point_temper, wind_direction, wind_speed, Cloudiness, sun_sum_radiation, direct_radiation, scatter_radiation)
+        VALUES
+        (#{stationId}, #{month}, #{day}, #{time}, #{pressure}, #{dryTemper}, #{relativeSolid}, #{pointTemper}, #{windDirection}, #{windSpeed}, #{Cloudiness},  #{sunSumRadiation}, #{directRadiation}, #{scatterRadiation})
+    </insert>
+    <insert id="insert_t_future_meteorological_p85_2050">
+        INSERT INTO
+            t_future_meteorological_p85_2050(station_id, month , day , time , pressure, dry_temper, relative_solid, point_temper, wind_direction, wind_speed, Cloudiness, sun_sum_radiation, direct_radiation, scatter_radiation)
+        VALUES
+        (#{stationId}, #{month}, #{day}, #{time}, #{pressure}, #{dryTemper}, #{relativeSolid}, #{pointTemper}, #{windDirection}, #{windSpeed}, #{Cloudiness},  #{sunSumRadiation}, #{directRadiation}, #{scatterRadiation})
+    </insert>
+    <insert id="insert_t_future_meteorological_p85_2099">
+        INSERT INTO
+            t_future_meteorological_p85_2099(station_id, month , day , time , pressure, dry_temper, relative_solid, point_temper, wind_direction, wind_speed, Cloudiness, sun_sum_radiation, direct_radiation, scatter_radiation)
+        VALUES
+        (#{stationId}, #{month}, #{day}, #{time}, #{pressure}, #{dryTemper}, #{relativeSolid}, #{pointTemper}, #{windDirection}, #{windSpeed}, #{Cloudiness},  #{sunSumRadiation}, #{directRadiation}, #{scatterRadiation})
+    </insert>
+
+    <update id="update_t_future_meteorological_p45_2050" parameterType="com.mobisys.building.entity.FutureMeteoroLogicalInfo">
+        update t_future_meteorological_p45_2050
+        <set >
+
+            <if test="pressure != null" >
+                pressure = #{pressure},
+            </if>
+            <if test="dryTemper != null" >
+                dry_temper = #{dryTemper},
+            </if>
+            <if test="relativeSolid != null" >
+                relative_solid = #{relativeSolid},
+            </if>
+            <if test="pointTemper != null" >
+                point_temper = #{pointTemper},
+            </if>
+            <if test="windDirection != null" >
+                wind_direction = #{windDirection},
+            </if>
+            <if test="windSpeed != null" >
+                wind_speed = #{windSpeed},
+            </if>
+            <if test="Cloudiness != null" >
+                cloudiness = #{Cloudiness},
+            </if>
+            <if test="sunSumRadiation != null" >
+                sun_sum_radiation = #{sunSumRadiation},
+            </if>
+
+            <if test="directRadiation != null" >
+                direct_radiation = #{directRadiation},
+            </if>
+            <if test="scatterRadiation != null" >
+                scatter_radiation = #{scatterRadiation},
+            </if>
+
+        </set>
+        where station_id= #{stationId} and month =#{month} and day=#{day} and time=#{time}
+
+    </update>
+    <update id="update_t_future_meteorological_p45_2099" parameterType="com.mobisys.building.entity.FutureMeteoroLogicalInfo">
+        update t_future_meteorological_p45_2099
+        <set >
+            <if test="pressure != null" >
+                pressure = #{pressure},
+            </if>
+            <if test="dryTemper != null" >
+                dry_temper = #{dryTemper},
+            </if>
+            <if test="relativeSolid != null" >
+                relative_solid = #{relativeSolid},
+            </if>
+            <if test="pointTemper != null" >
+                point_temper = #{pointTemper},
+            </if>
+            <if test="windDirection != null" >
+                wind_direction = #{windDirection},
+            </if>
+            <if test="windSpeed != null" >
+                wind_speed = #{windSpeed},
+            </if>
+            <if test="Cloudiness != null" >
+                cloudiness = #{Cloudiness},
+            </if>
+            <if test="sunSumRadiation != null" >
+                sun_sum_radiation = #{sunSumRadiation},
+            </if>
+
+            <if test="directRadiation != null" >
+                direct_radiation = #{directRadiation},
+            </if>
+            <if test="scatterRadiation != null" >
+                scatter_radiation = #{scatterRadiation},
+            </if>
+
+        </set>
+        where station_id= #{stationId} and month =#{month} and day=#{day} and time=#{time}
+
+    </update>
+    <update id="update_t_future_meteorological_p85_2050" parameterType="com.mobisys.building.entity.FutureMeteoroLogicalInfo">
+        update t_future_meteorological_p85_2050
+        <set >
+
+            <if test="pressure != null" >
+                pressure = #{pressure},
+            </if>
+            <if test="dryTemper != null" >
+                dry_temper = #{dryTemper},
+            </if>
+            <if test="relativeSolid != null" >
+                relative_solid = #{relativeSolid},
+            </if>
+            <if test="pointTemper != null" >
+                point_temper = #{pointTemper},
+            </if>
+            <if test="windDirection != null" >
+                wind_direction = #{windDirection},
+            </if>
+            <if test="windSpeed != null" >
+                wind_speed = #{windSpeed},
+            </if>
+            <if test="Cloudiness != null" >
+                cloudiness = #{Cloudiness},
+            </if>
+            <if test="sunSumRadiation != null" >
+                sun_sum_radiation = #{sunSumRadiation},
+            </if>
+
+            <if test="directRadiation != null" >
+                direct_radiation = #{directRadiation},
+            </if>
+            <if test="scatterRadiation != null" >
+                scatter_radiation = #{scatterRadiation},
+            </if>
+        </set>
+        where station_id= #{stationId} and month =#{month} and day=#{day} and time=#{time}
+
+    </update>
+    <update id="update_t_future_meteorological_p85_2099" parameterType="com.mobisys.building.entity.FutureMeteoroLogicalInfo">
+        update t_future_meteorological_p85_2099
+        <set >
+            <if test="pressure != null" >
+                pressure = #{pressure},
+            </if>
+            <if test="dryTemper != null" >
+                dry_temper = #{dryTemper},
+            </if>
+            <if test="relativeSolid != null" >
+                relative_solid = #{relativeSolid},
+            </if>
+            <if test="pointTemper != null" >
+                point_temper = #{pointTemper},
+            </if>
+            <if test="windDirection != null" >
+                wind_direction = #{windDirection},
+            </if>
+            <if test="windSpeed != null" >
+                wind_speed = #{windSpeed},
+            </if>
+            <if test="Cloudiness != null" >
+                cloudiness = #{Cloudiness},
+            </if>
+            <if test="sunSumRadiation != null" >
+                sun_sum_radiation = #{sunSumRadiation},
+            </if>
+
+            <if test="directRadiation != null" >
+                direct_radiation = #{directRadiation},
+            </if>
+            <if test="scatterRadiation != null" >
+                scatter_radiation = #{scatterRadiation},
+            </if>
+        </set>
+        where station_id= #{stationId} and month =#{month} and day=#{day} and time=#{time}
+
+    </update>
+</mapper>

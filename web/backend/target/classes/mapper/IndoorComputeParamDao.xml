@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.IndoorComputeParamDao">
+
+    <!--List<HavcCompParamInfo> queryHavcCompParamById();-->
+    <select id="queryIndoorComputeParamById" resultType="com.mobisys.building.entity.IndoorComputeParamInfo">
+        SELECT *
+        FROM icap where station_id = #{stationId}
+    </select>
+
+    <update id="update_icap" parameterType="com.mobisys.building.entity.IndoorComputeParamInfo">
+        update icap
+        <set >
+
+            <if test="hotHighTemp != null" >
+                hot_high_temp = #{hotHighTemp},
+            </if>
+            <if test="hotLowTemp != null" >
+                hot_low_temp = #{hotLowTemp},
+            </if>
+
+            <if test="coldHighTemp != null" >
+                cold_high_temp = #{coldHighTemp},
+            </if>
+
+            <if test="coldLowTemp != null" >
+                cold_low_temp = #{coldLowTemp},
+            </if>
+
+        </set>
+        where station_id= #{stationId} and arch_type = #{archType} and arch_level = #{archLevel}
+
+    </update>
+
+
+
+
+</mapper>

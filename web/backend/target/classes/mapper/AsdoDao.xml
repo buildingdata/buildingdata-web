@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.AsdoDao">
+    <select id="queryAsdo" resultType="com.mobisys.building.entity.AsdoInfo">
+        SELECT a.station_id, c.city_name
+        FROM asdo a, station c
+        WHERE
+        a.station_id = c.station_id
+        ORDER BY
+        station_id ASC
+    </select>
+
+    <select id="queryAsdoById" resultType="com.mobisys.building.entity.AsdoInfo">
+        SELECT *
+        FROM asdo
+        WHERE
+            station_id = #{stationId}
+    </select>
+    <select id="queryAsdoByIT" resultType="com.mobisys.building.entity.AsdoInfo">
+        SELECT *
+        FROM asdo
+        WHERE
+        station_id = #{stationId} and time = #{time} and table_type = #{table_Type}
+    </select>
+
+    <insert id="insertAsdoFromTable_1">
+        INSERT INTO
+        asdo(station_id, sunshade_period_start, sunshade_period_end, time, solar_altitude_angle, solar_azimuth_angle, outdoor_air_tep, table_type, hori_i, hori_id, east_i, east_id, sout_i, sout_id, west_i, west_id, nort_i, nort_id)
+        VALUES
+        (#{stationId}, #{sunshadePeriodStart}, #{sunshadePeriodEnd}, #{time}, #{solarAltitudeAngle}, #{solarAzimuthAngle}, #{outdoorAirTep}, #{table_Type}, #{horiI}, #{horiId}, #{eastI}, #{eastId}, #{soutI}, #{soutId}, #{westI}, #{westId}, #{nortI}, #{nortId})
+    </insert>
+    <update id="updateAsdoFromTable_1" parameterType="com.mobisys.building.entity.AsdoInfo">
+        update asdo
+        <set >
+            <!--            <if test="station_id != null" >-->
+            <!--                station_id = #{stationId},-->
+            <!--            </if>-->
+            <!-- <if test="time != null" >
+                 time = #{time},
+             </if> -->
+            <if test="sunshadePeriodStart != null" >
+                sunshade_period_start = #{sunshadePeriodStart},
+            </if>
+            <if test="sunshadePeriodEnd != null" >
+                sunshade_period_end = #{sunshadePeriodEnd},
+            </if>
+            <if test="solarAltitudeAngle!= null" >
+                solar_altitude_angle = #{solarAltitudeAngle},
+            </if>
+            <if test="solarAzimuthAngle != null" >
+                solar_azimuth_angle = #{solarAzimuthAngle},
+            </if>
+            <if test="outdoorAirTep != null" >
+                outdoor_air_tep = #{outdoorAirTep},
+            </if>
+            <if test="horiI != null" >
+                hori_i = #{horiI},
+            </if>
+            <if test="horiId != null" >
+                hori_id = #{horiId},
+            </if>
+            <if test="eastI != null" >
+                east_i = #{eastI},
+            </if>
+            <if test="eastId != null" >
+                east_id = #{eastId},
+            </if>
+            <if test="soutI != null" >
+                sout_i = #{soutI},
+            </if>
+            <if test="soutId != null" >
+                sout_id = #{soutId},
+            </if>
+            <if test="westI != null" >
+                west_i = #{westI},
+            </if>
+            <if test="westId != null" >
+                west_id = #{westId},
+            </if>
+            <if test="nortI != null" >
+                nort_i = #{nortI},
+            </if>
+            <if test="nortId != null" >
+                nort_id = #{nortId},
+            </if>
+
+        </set>
+        where  station_id = #{stationId} AND time = #{time} AND table_type = #{table_Type}
+
+    </update>
+
+    <insert id="insertAsdoFromTable_2">
+        INSERT INTO
+        asdo(station_id, sunshade_period_start, sunshade_period_end, time, solar_altitude_angle, solar_azimuth_angle, outdoor_air_tep, table_type, hori_i, hori_id, east_i, east_id, sout_i, sout_id, west_i, west_id, nort_i, nort_id)
+        VALUES
+        (#{stationId}, #{sunshadePeriodStart}, #{sunshadePeriodEnd}, #{time}, #{solarAltitudeAngle}, #{solarAzimuthAngle}, #{outdoorAirTep}, #{table_Type}, #{horiI}, #{horiId}, #{eastI}, #{eastId}, #{soutI}, #{soutId}, #{westI}, #{westId}, #{nortI}, #{nortId})
+    </insert>
+    <update id="updateAsdoFromTable_2" parameterType="com.mobisys.building.entity.AsdoInfo">
+        update asdo
+        <set >
+            <!--            <if test="station_id != null" >-->
+            <!--                station_id = #{stationId},-->
+            <!--            </if>-->
+            <!-- <if test="time != null" >
+                 time = #{time},
+             </if> -->
+            <if test="sunshadePeriodStart != null" >
+                sunshade_period_start = #{sunshadePeriodStart},
+            </if>
+            <if test="sunshadePeriodEnd != null" >
+                sunshade_period_end = #{sunshadePeriodEnd},
+            </if>
+            <if test="solarAltitudeAngle!= null" >
+                solar_altitude_angle = #{solarAltitudeAngle},
+            </if>
+            <if test="solarAzimuthAngle != null" >
+                solar_azimuth_angle = #{solarAzimuthAngle},
+            </if>
+            <if test="outdoorAirTep != null" >
+                outdoor_air_tep = #{outdoorAirTep},
+            </if>
+            <if test="horiI != null" >
+                hori_i = #{horiI},
+            </if>
+            <if test="horiId != null" >
+                hori_id = #{horiId},
+            </if>
+            <if test="eastI != null" >
+                east_i = #{eastI},
+            </if>
+            <if test="eastId != null" >
+                east_id = #{eastId},
+            </if>
+            <if test="soutI != null" >
+                sout_i = #{soutI},
+            </if>
+            <if test="soutId != null" >
+                sout_id = #{soutId},
+            </if>
+            <if test="westI != null" >
+                west_i = #{westI},
+            </if>
+            <if test="westId != null" >
+                west_id = #{westId},
+            </if>
+            <if test="nortI != null" >
+                nort_i = #{nortI},
+            </if>
+            <if test="nortId != null" >
+                nort_id = #{nortId},
+            </if>
+
+        </set>
+        where  station_id = #{stationId} AND time = #{time} AND table_type = #{table_Type}
+
+    </update>
+
+    <insert id="insertAsdoFromTable_3">
+        INSERT INTO
+        asdo(station_id, sunshade_period_start, sunshade_period_end, time, ave_value_outair_day_hour, table_type, hori_i, hori_id, east_i, east_id, sout_i, sout_id, west_i, west_id, nort_i, nort_id)
+        VALUES
+        (#{stationId}, #{sunshadePeriodStart}, #{sunshadePeriodEnd}, #{time}, #{aveValueOutairDayHour}, #{tableType}, #{horiI}, #{horiId}, #{eastI}, #{eastId}, #{soutI}, #{soutId}, #{westI}, #{westId}, #{nortI}, #{nortId})
+    </insert>
+    <update id="updateAsdoFromTable_3" parameterType="com.mobisys.building.entity.AsdoInfo">
+        update asdo
+        <set >
+            <!--            <if test="station_id != null" >-->
+            <!--                station_id = #{stationId},-->
+            <!--            </if>-->
+            <!-- <if test="time != null" >
+                 time = #{time},
+             </if> -->
+            <if test="sunshadePeriodStart != null" >
+                sunshade_period_start = #{sunshadePeriodStart},
+            </if>
+            <if test="sunshadePeriodEnd != null" >
+                sunshade_period_end = #{sunshadePeriodEnd},
+            </if>
+            <if test="aveValueOutairDayHour!= null" >
+                ave_value_outair_day_hour = #{aveValueOutairDayHour},
+            </if>
+            <if test="horiI != null" >
+                hori_i = #{horiI},
+            </if>
+            <if test="horiId != null" >
+                hori_id = #{horiId},
+            </if>
+            <if test="eastI != null" >
+                east_i = #{eastI},
+            </if>
+            <if test="eastId != null" >
+                east_id = #{eastId},
+            </if>
+            <if test="soutI != null" >
+                sout_i = #{soutI},
+            </if>
+            <if test="soutId != null" >
+                sout_id = #{soutId},
+            </if>
+            <if test="westI != null" >
+                west_i = #{westI},
+            </if>
+            <if test="westId != null" >
+                west_id = #{westId},
+            </if>
+            <if test="nortI != null" >
+                nort_i = #{nortI},
+            </if>
+            <if test="nortId != null" >
+                nort_id = #{nortId},
+            </if>
+
+        </set>
+        where  station_id = #{stationId} AND time = #{time} AND table_type = #{table_Type}
+
+    </update>
+
+</mapper>

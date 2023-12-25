@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.OnlineAnalysisDao">
+    <select id="drawPoint" resultType="java.lang.Double">
+            SELECT dry_temp
+            FROM t_typical_meteorological
+            WHERE
+            station_id = #{city2} AND time= #{i} AND month BETWEEN  #{beginMonth} AND #{toMonth};
+        </select>
+
+    <select id="drawPoint2" resultType="java.lang.Double">
+            SELECT relative_humidity
+            FROM t_typical_meteorological
+            WHERE
+            station_id = #{city2} AND time= #{i} AND month BETWEEN  #{beginMonth} AND #{toMonth};
+        </select>
+
+    <select id="drawPoint3" resultType="java.lang.Double">
+            SELECT AVG(dry_temp)
+            FROM t_typical_meteorological
+            WHERE
+            `station_id` = #{city} AND time= #{i} AND month BETWEEN  #{beginMonth} AND #{toMonth};
+    </select>
+
+    <select id="drawCity" resultType="com.mobisys.building.entity.StationInfo">
+            SELECT *
+            FROM station
+            WHERE
+            station_id = #{city2};
+        </select>
+</mapper>

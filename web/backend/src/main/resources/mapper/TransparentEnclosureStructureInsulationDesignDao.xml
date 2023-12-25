@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.TransparentEnclosureStructureInsulationDesignDao">
+    <!--<select id="queryUserByPhone" resultType="com.mobisys.building.entity.OtmccInfo">-->
+    <!--SELECT o.station_id, c.city_name-->
+    <!--FROM otmcc o, station c-->
+    <!--WHERE-->
+    <!--o.station_id = c.station_id-->
+    <!--ORDER BY-->
+    <!--station_id ASC-->
+    <!--</select>-->
+
+    <select id="queryTransparentEnclosureStructureInsulationDesignById" resultType="com.mobisys.building.entity.TransparentEnclosureStructureInsulationDesignInfo">
+        SELECT *
+        FROM transparent_enclosure_structure_insulation_design o
+        WHERE
+        o.station_id = #{id}
+    </select>
+
+    <insert id="insertTransparentEnclosureStructureInsulationDesign">
+        INSERT INTO
+        transparent_enclosure_structure_insulation_design(station_id, climate_zones, k_value,resistance_to_condensation,basic_thermal_comfort)
+        VALUES
+        (#{stationId}, #{climateZones}, #{kValue},#{resistanceToCondensation},#{basicThermalComfort})
+    </insert>
+
+    <update id="update_transparent_enclosure_structure_insulation_design" parameterType="com.mobisys.building.entity.TransparentEnclosureStructureInsulationDesignInfo">
+        update transparent_enclosure_structure_insulation_design
+        <set >
+
+            station_id= #{stationId},
+
+            climate_zones = #{climateZones},
+
+            <if test="kValue != null" >
+                k_value = #{kValue},
+            </if>
+
+            <if test="resistanceToCondensation != null" >
+                resistance_to_condensation = #{resistanceToCondensation},
+            </if>
+
+            <if test="basicThermalComfort != null" >
+                basic_thermal_comfort = #{basicThermalComfort},
+            </if>
+
+        </set>
+        where station_id= #{stationId} and climate_zones = #{climateZones}
+
+    </update>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.indoorDiffBuilDao">
+    <select id="queryByBuild" resultType="com.mobisys.building.entity.indoorDiffBuilInfo">
+        SELECT *
+        FROM t_diffrent_build_temper
+        WHERE type = #{build}
+
+    </select>
+    <select id="getType" resultType="java.lang.String">
+        SELECT type
+        FROM t_diffrent_build_temper
+       GROUP BY type
+
+    </select>
+
+    <update id="update_t_diffrent_build_temper" parameterType="com.mobisys.building.entity.indoorDiffBuilInfo">
+        update t_diffrent_build_temper
+        <set >
+
+            <if test="limitLowHeatTemp != null" >
+                limitLowHeatTemp = #{limitLowHeatTemp},
+            </if>
+            <if test="limitUpHeatTemp != null" >
+                limitUpHeatTemp = #{limitUpHeatTemp},
+            </if>
+
+        </set>
+        where type= #{type} and level = #{level}
+
+    </update>
+</mapper>

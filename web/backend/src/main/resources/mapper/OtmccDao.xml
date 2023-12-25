@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.OtmccDao">
+    <select id="queryOtmcc" resultType="com.mobisys.building.entity.OtmccInfo">
+        SELECT o.station_id, c.city_name
+        FROM otmcc o, station c
+        WHERE
+        o.station_id = c.station_id
+        ORDER BY
+        station_id ASC
+    </select>
+
+    <select id="queryOtmccById" resultType="com.mobisys.building.entity.OtmccInfo">
+        SELECT *
+        FROM otmcc o
+        WHERE
+            o.station_id = #{id}
+    </select>
+    <select id="queryOtmccByIT" resultType="com.mobisys.building.entity.OtmccInfo">
+        SELECT *
+        FROM otmcc
+        WHERE
+        station_id = #{stationId} and time = #{time}
+    </select>
+
+    <insert id="insertOtmcc">
+        INSERT INTO
+        otmcc(station_id, time, outdoor_air_tep, horizontal, east, south, west, north)
+        VALUES
+        (#{stationId}, #{time}, #{outdoorAirTep}, #{horizontal}, #{east}, #{south}, #{west}, #{north})
+    </insert>
+    <update id="updateOtmcc" parameterType="com.mobisys.building.entity.OtmccInfo">
+        update otmcc
+        <set >
+            <!--            <if test="station_id != null" >-->
+            <!--                station_id = #{stationId},-->
+            <!--            </if>-->
+            <!-- <if test="time != null" >
+                 time = #{time},
+             </if> -->
+            <if test="outdoorAirTep != null" >
+                outdoor_air_tep = #{outdoorAirTep},
+            </if>
+            <if test="horizontal != null" >
+                horizontal = #{horizontal},
+            </if>
+            <if test="east!= null" >
+                east = #{east},
+            </if>
+            <if test="south != null" >
+                south = #{south},
+            </if>
+            <if test="west != null" >
+                west = #{west},
+            </if>
+            <if test="north != null" >
+                north = #{north},
+            </if>
+
+        </set>
+        where station_id = #{stationId} and time = #{time}
+
+    </update>
+</mapper>
