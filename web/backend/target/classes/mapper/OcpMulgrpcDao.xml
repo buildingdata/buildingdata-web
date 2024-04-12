@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.OcpMulgrpcDao">
+    <select id="queryOcpMulgrpc" resultType="com.mobisys.building.entity.OcpMulgrpcInfo">
+        SELECT *
+        FROM ocp_mul_grpc
+        ORDER BY
+        station_id ASC
+    </select>
+
+    <select id="queryOcpMulgrpcById" resultType="com.mobisys.building.entity.OcpMulgrpcInfo">
+        SELECT *
+        FROM ocp_mul_grpc
+        WHERE
+        station_id = #{id}
+    </select>
+    <insert id="insertOcpMulgrpc">
+        INSERT INTO
+        ocp_mul_grpc(station_id,temper_win_air_ct_6_hours,temper_win_air_ct_24_hours,temper_win_air_ct_48_hours,temper_win_heating_ct_1_days,temper_win_heating_ct_5_days,temper_win_heating_ct_10_days,temper_sum_air_cdat_1_days,temper_sum_air_cdat_5_days,temper_sum_air_cdat_10_days,temper_sum_air_ct_10_hours_dry,temper_sum_air_ct_10_hours_wet,temper_sum_air_ct_50_hours_dry,temper_sum_air_ct_50_hours_wet,temper_sum_air_ct_100_hours_dry,temper_sum_air_ct_100_hours_wet,moisture_sum_dehum_cah_10_hours_moi,moisture_sum_dehum_cah_10_hours_dry,moisture_sum_dehum_cah_50_hours_moi,moisture_sum_dehum_cah_50_hours_dry,moisture_sum_dehum_cah_100_hours_moi,moisture_sum_dehum_cah_100_hours_dry,moisture_win_hum_cah_10_hours_moi,moisture_win_hum_cah_10_hours_dry,moisture_win_hum_cah_50_hours_moi,moisture_win_hum_cah_50_hours_dry,moisture_win_hum_cah_100_hours_moi,moisture_win_hum_cah_100_hours_dry,enthalpy_sum_fresh_ce_10_hours_ent,enthalpy_sum_fresh_ce_10_hours_dry,enthalpy_sum_fresh_ce_50_hours_ent,enthalpy_sum_fresh_ce_50_hours_dry,enthalpy_sum_fresh_ce_100_hours_ent,enthalpy_sum_fresh_ce_100_hours_dry,enthalpy_win_fresh_ce_10_hours_ent,enthalpy_win_fresh_ce_10_hours_dry,enthalpy_win_fresh_ce_50_hours_ent,enthalpy_win_fresh_ce_50_hours_dry,enthalpy_win_fresh_ce_100_hours_ent,enthalpy_win_fresh_ce_100_hours_dry)
+        VALUES
+        (#{stationId},#{temperWinAirCt6Hours},#{temperWinAirCt24Hours},#{temperWinAirCt48Hours},#{temperWinHeatingCt1Days},#{temperWinHeatingCt5Days},#{temperWinHeatingCt10Days},#{temperSumAirCdat1Days},#{temperSumAirCdat5Days},#{temperSumAirCdat10Days},#{temperSumAirCt10HoursDry},#{temperSumAirCt10HoursWet},#{temperSumAirCt50HoursDry},#{temperSumAirCt50HoursWet},#{temperSumAirCt100HoursDry},#{temperSumAirCt100HoursWet},#{moistureSumDehumCah10HoursMoi},#{moistureSumDehumCah10HoursDry},#{moistureSumDehumCah50HoursMoi},#{moistureSumDehumCah50HoursDry},#{moistureSumDehumCah100HoursMoi},#{moistureSumDehumCah100HoursDry},#{moistureWinHumCah10HoursMoi},#{moistureWinHumCah10HoursDry},#{moistureWinHumCah50HoursMoi},#{moistureWinHumCah50HoursDry},#{moistureWinHumCah100HoursMoi},#{moistureWinHumCah100HoursDry},#{enthalpySumFreshCe10HoursEnt},#{enthalpySumFreshCe10HoursDry},#{enthalpySumFreshCe50HoursEnt},#{enthalpySumFreshCe50HoursDry},#{enthalpySumFreshCe100HoursEnt},#{enthalpySumFreshCe100HoursDry},#{enthalpyWinFreshCe10HoursEnt},#{enthalpyWinFreshCe10HoursDry},#{enthalpyWinFreshCe50HoursEnt},#{enthalpyWinFreshCe50HoursDry},#{enthalpyWinFreshCe100HoursEnt},#{enthalpyWinFreshCe100HoursDry})
+    </insert>
+    <update id="updateOcpMulgrpc" parameterType="com.mobisys.building.entity.OcpMulgrpcInfo">
+        update ocp_mul_grpc
+        <set >
+            <!--            <if test="station_id != null" >-->
+            <!--                station_id = #{stationId},-->
+            <!--            </if>-->
+            <if test="temperWinAirCt6Hours != null" >
+                temper_win_air_ct_6_hours = #{temperWinAirCt6Hours},
+             </if>
+            <if test="temperWinAirCt24Hours != null" >
+                temper_win_air_ct_24_hours = #{temperWinAirCt24Hours},
+            </if>
+            <if test="temperWinAirCt48Hours != null" >
+                temper_win_air_ct_48_hours = #{temperWinAirCt48Hours},
+            </if>
+            <if test="temperWinHeatingCt1Days!= null" >
+                temper_win_heating_ct_1_days = #{temperWinHeatingCt1Days},
+            </if>
+            <if test="temperWinHeatingCt5Days != null" >
+                temper_win_heating_ct_5_days = #{temperWinHeatingCt5Days},
+            </if>
+            <if test="temperWinHeatingCt10Days != null" >
+                temper_win_heating_ct_10_days = #{temperWinHeatingCt10Days},
+            </if>
+            <if test="temperSumAirCdat1Days != null" >
+                temper_sum_air_cdat_1_days = #{temperSumAirCdat1Days},
+            </if>
+            <if test="temperSumAirCdat5Days != null" >
+                temper_sum_air_cdat_5_days = #{temperSumAirCdat5Days},
+            </if>
+            <if test="temperSumAirCdat10Days != null" >
+                temper_sum_air_cdat_10_days = #{temperSumAirCdat10Days},
+            </if>
+            <if test="temperSumAirCt10HoursDry != null" >
+                temper_sum_air_ct_10_hours_dry = #{temperSumAirCt10HoursDry},
+            </if>
+            <if test="temperSumAirCt10HoursWet != null" >
+                temper_sum_air_ct_10_hours_wet = #{temperSumAirCt10HoursWet},
+            </if>
+            <if test="temperSumAirCt50HoursDry != null" >
+                temper_sum_air_ct_50_hours_dry = #{temperSumAirCt50HoursDry},
+            </if>
+            <if test="temperSumAirCt50HoursWet != null" >
+                temper_sum_air_ct_50_hours_wet = #{temperSumAirCt50HoursWet},
+            </if>
+            <if test="temperSumAirCt100HoursDry != null" >
+                temper_sum_air_ct_100_hours_dry = #{temperSumAirCt100HoursDry},
+            </if>
+            <if test="temperSumAirCt100HoursWet != null" >
+                temper_sum_air_ct_100_hours_wet = #{temperSumAirCt100HoursWet},
+            </if>
+            <if test="moistureSumDehumCah10HoursMoi != null" >
+                moisture_sum_dehum_cah_10_hours_moi = #{moistureSumDehumCah10HoursMoi},
+            </if>
+            <if test="moistureSumDehumCah10HoursDry != null" >
+                moisture_sum_dehum_cah_10_hours_dry = #{moistureSumDehumCah10HoursDry},
+            </if>
+            <if test="moistureSumDehumCah50HoursMoi != null" >
+                moisture_sum_dehum_cah_50_hours_moi = #{moistureSumDehumCah50HoursMoi},
+            </if>
+            <if test="moistureSumDehumCah50HoursDry != null" >
+                moisture_sum_dehum_cah_50_hours_dry = #{moistureSumDehumCah50HoursDry},
+            </if>
+            <if test="moistureSumDehumCah100HoursMoi != null" >
+                moisture_sum_dehum_cah_100_hours_moi = #{moistureSumDehumCah100HoursMoi},
+            </if>
+            <if test="moistureWinHumCah100HoursDry != null" >
+                moisture_sum_dehum_cah_100_hours_dry = #{moistureWinHumCah100HoursDry},
+            </if>
+            <if test="enthalpySumFreshCe10HoursEnt != null" >
+                enthalpy_sum_fresh_ce_10_hours_ent = #{enthalpySumFreshCe10HoursEnt},
+            </if>
+            <if test="enthalpySumFreshCe10HoursDry != null" >
+                enthalpy_sum_fresh_ce_10_hours_dry = #{enthalpySumFreshCe10HoursDry},
+            </if>
+            <if test="enthalpySumFreshCe50HoursEnt != null" >
+                enthalpy_sum_fresh_ce_50_hours_ent = #{enthalpySumFreshCe50HoursEnt},
+            </if>
+            <if test="enthalpySumFreshCe50HoursDry != null" >
+                enthalpy_sum_fresh_ce_50_hours_dry = #{enthalpySumFreshCe50HoursDry},
+            </if>
+            <if test="enthalpySumFreshCe100HoursEnt != null" >
+                enthalpy_sum_fresh_ce_100_hours_ent = #{enthalpySumFreshCe100HoursEnt},
+            </if>
+            <if test="enthalpySumFreshCe100HoursDry != null" >
+                enthalpy_sum_fresh_ce_100_hours_dry = #{enthalpySumFreshCe100HoursDry},
+            </if>
+            <if test="enthalpyWinFreshCe10HoursEnt != null" >
+                enthalpy_win_fresh_ce_10_hours_ent = #{enthalpyWinFreshCe10HoursEnt},
+            </if>
+            <if test="enthalpyWinFreshCe10HoursDry != null" >
+                enthalpy_win_fresh_ce_10_hours_dry = #{enthalpyWinFreshCe10HoursDry},
+            </if>
+            <if test="enthalpyWinFreshCe50HoursEnt != null" >
+                enthalpy_win_fresh_ce_50_hours_ent = #{enthalpyWinFreshCe50HoursEnt},
+            </if>
+            <if test="enthalpyWinFreshCe50HoursDry != null" >
+                enthalpy_win_fresh_ce_50_hours_dry = #{enthalpyWinFreshCe50HoursDry},
+            </if>
+            <if test="enthalpyWinFreshCe100HoursEnt != null" >
+                enthalpy_win_fresh_ce_100_hours_ent = #{enthalpyWinFreshCe100HoursEnt},
+            </if>
+            <if test="enthalpyWinFreshCe100HoursDry != null" >
+                enthalpy_win_fresh_ce_100_hours_dry = #{enthalpyWinFreshCe100HoursDry},
+            </if>
+
+        </set>
+        where station_id = #{stationId}
+
+    </update>
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.TypicalSummerDehumidificationParamDao">
+    <select id="queryTSDPById" resultType="com.mobisys.building.entity.TypicalSummerDehumidificationParamInfo">
+        SELECT param1, param2, param3, param4, param5, param6, param7, param8, param9
+        FROM t_typical_summer_dehumidification_param
+        WHERE station_id = #{id}
+    </select>
+    <insert id="insertTypicalSummerDehumidificationParam">
+        INSERT INTO
+        t_typical_summer_dehumidification_param(station_id, param1, param2, param3, param4, param5, param6, param7, param8, param9)
+        VALUES
+        (#{stationId},#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9})
+    </insert>
+    <update id="updateTypicalSummerDehumidificationParam" parameterType="com.mobisys.building.entity.TypicalSummerDehumidificationParamInfo">
+        update t_typical_summer_dehumidification_param
+        <set>
+            <if test="param1 != null">
+                param1 = #{param1},
+            </if>
+            <if test="param2 != null">
+                param2 = #{param2},
+            </if>
+            <if test="param3 != null">
+                param3 = #{param3},
+            </if>
+            <if test="param4 != null">
+                param4 = #{param4},
+            </if>
+            <if test="param5 != null">
+                param5 = #{param5},
+            </if>
+            <if test="param6 != null">
+                param6 = #{param6},
+            </if>
+            <if test="param7 != null">
+                param7 = #{param7},
+            </if>
+            <if test="param8 != null">
+                param8 = #{param8},
+            </if>
+            <if test="param9 != null">
+                param9 = #{param9},
+            </if>
+        </set>
+        where station_id = #{stationId}
+    </update>
+
+</mapper>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.OcpehhccDao">
+    <select id="queryOcpehhcc" resultType="com.mobisys.building.entity.OcpehhccInfo">
+        SELECT *
+        FROM ocpehhcc
+        ORDER BY
+        station_id ASC
+    </select>
+
+    <select id="queryOcpehhccById" resultType="com.mobisys.building.entity.OcpehhccInfo">
+        SELECT *
+        FROM ocpehhcc
+        WHERE
+        station_id = #{id}
+    </select>
+    <select id="queryOcpehhccByIT" resultType="com.mobisys.building.entity.OcpehhccInfo">
+        SELECT *
+        FROM ocpehhcc
+        WHERE
+        station_id = #{stationId} and month = #{month} and day = #{day} and time = #{time}
+    </select>
+
+    <insert id="insertOcpehhcc">
+        INSERT INTO
+        ocpehhcc(station_id, cc,month,day,time, dbt,pre,rhm,w_dir,w_spd,dpt,gsr,dif,dir,pct)
+        VALUES
+        (#{stationId}, #{cc},#{month},#{day},#{time},#{dbt},#{pre},#{rhm},#{wDir},#{wSpd},#{dpt},#{gsr},#{dif},#{dir},#{pct})
+    </insert>
+
+    <insert id="insertOcpehhccList">
+        INSERT INTO
+        ocpehhcc(station_id,cc,month,day,time, dbt,pre,rhm,w_dir,w_spd,dpt,gsr,dif,dir,pct)
+        VALUES
+        <foreach collection="ocpehhccInfoList" item="ocpehhccInfo" index="index" separator=",">
+            (#{ocpehhccInfo.stationId}, #{ocpehhccInfo.year},#{ocpehhccInfo.month},#{ocpehhccInfo.day},#{ocpehhccInfo.time},#{ocpehhccInfo.dbt},#{ocpehhccInfo.pre},#{ocpehhccInfo.rhm},#{ocpehhccInfo.wDir},#{ocpehhccInfo.wSpd},#{ocpehhccInfo.dpt},#{ocpehhccInfo.wbt},#{ocpehhccInfo.gsr},#{ocpehhccInfo.dif},#{ocpehhccInfo.dir},#{ocpehhccInfo.pct})
+        </foreach>
+    </insert>
+    <update id="updateOcpehhcc" parameterType="com.mobisys.building.entity.OcpehhccInfo">
+        update ocpehhcc
+        <set >
+            <!--            <if test="station_id != null" >-->
+            <!--                station_id = #{stationId},-->
+            <!--            </if>-->
+            <!-- <if test="time != null" >
+                 time = #{time},
+             </if> -->
+            <if test="dbt != null" >
+                dbt = #{dbt},
+            </if>
+            <if test="pre != null" >
+                pre = #{pre},
+            </if>
+            <if test="rhm!= null" >
+                rhm = #{rhm},
+            </if>
+            <if test="wDir != null" >
+                w_dir = #{wDir},
+            </if>
+            <if test="wSpd != null" >
+                w_spd = #{wSpd},
+            </if>
+            <if test="dpt != null" >
+                dpt = #{dpt},
+            </if>
+            <if test="cc != null" >
+                cc = #{cc},
+            </if>
+            <if test="gsr != null" >
+                gsr = #{gsr},
+            </if>
+            <if test="dif != null" >
+                dif = #{dif},
+            </if>
+            <if test="dir != null" >
+                dir = #{dir},
+            </if>
+            <if test="pct != null" >
+                pct = #{pct},
+            </if>
+
+        </set>
+        where station_id = #{stationId}  and month = #{month} and day = #{day} and time = #{time}
+
+    </update>
+</mapper>

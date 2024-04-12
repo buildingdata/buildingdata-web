@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.UserDao">
+    <!--<select id="queryUserByPhone" resultType="com.mobisys.building.entity.OtmccInfo">-->
+        <!--SELECT o.station_id, c.city_name-->
+        <!--FROM otmcc o, station c-->
+        <!--WHERE-->
+        <!--o.station_id = c.station_id-->
+        <!--ORDER BY-->
+        <!--station_id ASC-->
+    <!--</select>-->
+
+    <select id="queryUserByPhone" resultType="com.mobisys.building.entity.UserInfo">
+        SELECT *
+        FROM user o
+        WHERE
+        o.phone_num = #{phone}
+    </select>
+
+    <select id="queryUserByName" resultType="com.mobisys.building.entity.UserInfo">
+        SELECT *
+        FROM user o
+        WHERE
+        o.role = #{userName}
+    </select>
+    <select id="queryAllUser" resultType="com.mobisys.building.entity.UserInfo">
+        SELECT *
+        FROM user
+    </select>
+
+    <insert id="insertUser">
+        INSERT INTO
+        user(phone_num, user_name, company_name, city,industry,information,type,role,pwd)
+        VALUES
+        (#{phoneNum}, #{userName}, #{companyName},#{city},#{industry},#{information},#{type},#{role},#{pwd})
+    </insert>
+    <!-- 跟新用户，设置id，设置参数类型（因为有很多的参数，所以就用pojo类型了） -->
+    <update id="updateUser" parameterType="com.mobisys.building.entity.UserInfo">
+        update user
+        <set >
+            <if test="phoneNum != null" >
+                phone_num = #{phoneNum},
+            </if>
+            <if test="userName != null" >
+                user_name = #{userName},
+            </if>
+            <if test="companyName != null" >
+                company_name = #{companyName},
+            </if>
+            <if test="city != null" >
+                city = #{city},
+            </if>
+            <if test="industry != null" >
+                industry = #{industry},
+            </if>
+            <if test="information != null" >
+                information = #{information},
+            </if>
+            <if test="type != null" >
+                type = #{type},
+            </if>
+            <if test="role != null" >
+                role = #{role},
+            </if>
+        </set>
+        where phone_num = #{phoneNum}
+
+    </update>
+</mapper>

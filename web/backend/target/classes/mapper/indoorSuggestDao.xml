@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.indoorSuggestDao">
+    <select id="query" resultType="com.mobisys.building.entity.indoorSuggestInfo">
+        SELECT *
+        FROM t_indoor_confort_suggestion
+
+    </select>
+
+    <update id="update_t_indoor_confort_suggestion" parameterType="com.mobisys.building.entity.indoorSuggestInfo">
+        update t_indoor_confort_suggestion
+        <set >
+
+            <if test="PPD != null" >
+                PPD = #{PPD},
+            </if>
+            <if test="PMV != null" >
+                PMV = #{PMV},
+            </if>
+
+        </set>
+        where level = #{level}
+
+    </update>
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.localDisconforDao">
+    <select id="query" resultType="com.mobisys.building.entity.localDisconforInfo">
+        SELECT *
+        FROM t_local_thermal_discomfort
+
+    </select>
+    <update id="update_t_local_thermal_discomfort" parameterType="com.mobisys.building.entity.localDisconforInfo">
+    update t_local_thermal_discomfort
+    <set >
+
+        <if test="windSpeedMostWin != null" >
+            windSpeedMostWin = #{windSpeedMostWin},
+        </if>
+        <if test="windSpeedMostSum!= null" >
+            windSpeedMostSum = #{windSpeedMostSum},
+        </if>
+        <if test="blowUnsatiRate != null" >
+            blowUnsatiRate = #{blowUnsatiRate},
+        </if>
+        <if test="vertTempUnsatiRate != null" >
+            vertTempUnsatiRate = #{vertTempUnsatiRate},
+        </if>
+        <if test="vertTempInequal != null" >
+            vertTempInequal = #{vertTempInequal},
+        </if>
+        <if test="GroTempUnsatiRate != null" >
+            GroTempUnsatiRate = #{GroTempUnsatiRate},
+        </if>
+        <if test="groudTempRange != null" >
+            groudTempRange = #{groudTempRange},
+        </if>
+        <if test="nonRadUnsatiRate != null" >
+            nonRadUnsatiRate = #{nonRadUnsatiRate},
+        </if>
+        <if test="nonRadHotCeil != null" >
+            nonRadHotCeil = #{nonRadHotCeil},
+        </if>
+        <if test="nonRadColdWall != null" >
+            nonRadColdWall = #{nonRadColdWall},
+        </if>
+        <if test="nonRadColdCeil != null" >
+            nonRadColdCeil = #{nonRadColdCeil},
+        </if>
+        <if test="nonRadHotWall != null" >
+            nonRadHotWall = #{nonRadHotWall},
+        </if>
+
+    </set>
+    where level = #{level}
+
+    </update>
+</mapper>

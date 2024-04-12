@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.IndoorDesignParamDao">
+
+    <!--List<HvacIndoorInfo> queryHvacIndoor();-->
+    <select id="queryIndoorDesignParam" resultType="com.mobisys.building.entity.IndoorDesignParamInfo">
+        SELECT *
+        FROM iddp
+    </select>
+
+    <update id="update_iddp" parameterType="com.mobisys.building.entity.IndoorDesignParamInfo">
+        update iddp
+        <set >
+
+            <if test="tempRange != null" >
+                temp_range = #{tempRange},
+            </if>
+            <if test="humiRange != null" >
+                humi_range = #{humiRange},
+            </if>
+
+            <if test="windSpeed != null" >
+                wind_speed = #{windSpeed},
+            </if>
+
+        </set>
+        where climates= #{climates} and season = #{season} and arch_type = #{archType} and arch_level = #{archLevel}
+
+    </update>
+
+
+
+</mapper>

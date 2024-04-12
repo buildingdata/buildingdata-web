@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.NonHeatingAirIndoorCalculationParametersDao">
+    <!--<select id="queryUserByPhone" resultType="com.mobisys.building.entity.OtmccInfo">-->
+    <!--SELECT o.station_id, c.city_name-->
+    <!--FROM otmcc o, station c-->
+    <!--WHERE-->
+    <!--o.station_id = c.station_id-->
+    <!--ORDER BY-->
+    <!--station_id ASC-->
+    <!--</select>-->
+
+    <select id="queryNonHeatingAirIndoorCalculationParametersById" resultType="com.mobisys.building.entity.NonHeatingAirIndoorCalculationParametersInfo">
+        SELECT *
+        FROM non_heating_air_indoor_calculation_parameters o
+        WHERE
+        o.station_id = #{id}
+    </select>
+
+    <insert id="insertNonHeatingAirIndoorCalculationParameters">
+        INSERT INTO
+        non_heating_air_indoor_calculation_parameters(station_id, type_and_level, winter_design_temperature,summer_design_temperature,winter_relative_humidity,summer_relative_humidity)
+        VALUES
+        (#{stationId}, #{typeAndLevel}, #{winterDesignTemperature},#{summerDesignTemperature},#{winterRelativeHumidity},#{summerRelativeHumidity})
+    </insert>
+
+    <update id="update_non_heating_air_indoor_calculation_parameters" parameterType="com.mobisys.building.entity.NonHeatingAirIndoorCalculationParametersInfo">
+        update non_heating_air_indoor_calculation_parameters
+        <set >
+
+            <if test="winterDesignTemperature != null" >
+                winter_design_temperature = #{winterDesignTemperature},
+            </if>
+
+
+            <if test="summerDesignTemperature != null" >
+                summer_design_temperature = #{summerDesignTemperature},
+            </if>
+
+            <if test="winterRelativeHumidity != null" >
+                winter_relative_humidity = #{winterRelativeHumidity},
+            </if>
+
+            <if test="summerRelativeHumidity != null" >
+                summer_relative_humidity = #{summerRelativeHumidity},
+            </if>
+
+        </set>
+        where station_id= #{stationId} and type_and_level = #{typeAndLevel}
+
+    </update>
+
+
+</mapper>

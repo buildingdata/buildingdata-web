@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mobisys.building.dao.simultaneousDao">
+    <select id="queryParamById" resultType="com.mobisys.building.entity.SimultaneousParamInfo">
+        SELECT *
+        FROM t_simultaneous_param
+        WHERE
+            station_id = #{id}
+    </select>
+    <insert id="insertSimultaneousParamList">
+        INSERT INTO
+        t_simultaneous_param(station_id,year,direction,wall_type,window_type,wall_window,SHGCO,ventilation,indoor_tem,r,in_cover,radiation,out_sur_absorb,room,area_load,dry_tem,wet_tem,total_radiation)
+        VALUES
+        <foreach collection="simultaneousParamInfoList" item="simultaneousParamInfo" index="index" separator=",">
+        (#{simultaneousParamInfo.stationId},#{simultaneousParamInfo.year},#{simultaneousParamInfo.direction},#{simultaneousParamInfo.wallType},#{simultaneousParamInfo.windowType},#{simultaneousParamInfo.wallWindow},#{simultaneousParamInfo.SHGCO},#{simultaneousParamInfo.ventilation},#{simultaneousParamInfo.indoorTem},#{simultaneousParamInfo.r},#{simultaneousParamInfo.inCover},#{simultaneousParamInfo.radiation},#{simultaneousParamInfo.outSurAbsorb},#{simultaneousParamInfo.room},#{simultaneousParamInfo.areaLoad},#{simultaneousParamInfo.dryTem},#{simultaneousParamInfo.WetTem},#{simultaneousParamInfo.totalRadiation})
+        </foreach>
+    </insert>
+    <insert id="insertSimultaneousParam">
+        INSERT INTO
+        t_simultaneous_param(station_id,year,direction,wall_type,window_type,wall_window,SHGCO,ventilation,indoor_tem,r,in_cover,radiation,out_sur_absorb,room,area_load,dry_tem,wet_tem,total_radiation)
+        VALUES
+        (#{stationId},#{year},#{direction},#{wallType},#{windowType},#{wallWindow},#{SHGCO},#{ventilation},#{indoorTem},#{r},#{inCover},#{radiation},#{outSurAbsorb},#{room},#{areaLoad},#{dryTem},#{WetTem},#{totalRadiation})
+    </insert>
+    <update id="updateSimultaneousParamList" parameterType="com.mobisys.building.entity.SimultaneousParamInfo">
+        <foreach collection="simultaneousParamInfoList" item="simultaneousParamInfo" index="index" separator=",">
+        update t_simultaneous_param
+        <set>
+            <if test="simultaneousParamInfo.year != null">
+                year = #{simultaneousParamInfo.year},
+            </if>
+            <if test="simultaneousParamInfo.direction != null">
+                direction = #{simultaneousParamInfo.direction},
+            </if>
+            <if test="simultaneousParamInfo.wallType != null">
+                wall_type = #{simultaneousParamInfo.wallType},
+            </if>
+            <if test="simultaneousParamInfo.windowType != null">
+                window_type = #{simultaneousParamInfo.windowType},
+            </if>
+            <if test="simultaneousParamInfo.wallWindow != null">
+                wall_window = #{simultaneousParamInfo.wallWindow},
+            </if>
+            <if test="simultaneousParamInfo.SHGCO != null">
+                SHGCO = #{simultaneousParamInfo.SHGCO},
+            </if>
+            <if test="simultaneousParamInfo.ventilation != null">
+                ventilation = #{simultaneousParamInfo.ventilation},
+            </if>
+            <if test="simultaneousParamInfo.indoorTem != null">
+                indoor_tem = #{simultaneousParamInfo.indoorTem},
+            </if>
+            <if test="simultaneousParamInfo.r != null">
+                r = #{simultaneousParamInfo.r},
+            </if>
+            <if test="simultaneousParamInfo.inCover != null">
+                in_cover = #{simultaneousParamInfo.inCover},
+            </if>
+            <if test="simultaneousParamInfo.radiation != null">
+                radiation = #{simultaneousParamInfo.radiation},
+            </if>
+            <if test="simultaneousParamInfo.outSurAbsorb != null">
+                out_sur_absorb = #{simultaneousParamInfo.outSurAbsorb},
+            </if>
+            <if test="simultaneousParamInfo.room != null">
+                room = #{simultaneousParamInfo.room},
+            </if>
+            <if test="simultaneousParamInfo.areaLoad != null">
+                area_load = #{simultaneousParamInfo.areaLoad},
+            </if>
+            <if test="simultaneousParamInfo.dryTem != null">
+                dry_tem = #{simultaneousParamInfo.dryTem},
+            </if>
+            <if test="simultaneousParamInfo.WetTem != null">
+                wet_tem = #{simultaneousParamInfo.WetTem},
+            </if>
+            <if test="simultaneousParamInfo.totalRadiation != null">
+                total_radiation = #{simultaneousParamInfo.totalRadiation},
+            </if>
+        </set>
+        where station_id = #{stationId}
+        </foreach>
+    </update>
+
+</mapper>
