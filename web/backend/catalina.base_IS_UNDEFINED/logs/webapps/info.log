@@ -1,3 +1,0 @@
-2022-04-06 20:16:36.645 [main] INFO  com.mobisys.building.BuildingApplication - Starting BuildingApplication on jinisishouxitaodeMacBook-Pro.local with PID 9255 (/Users/tao/building-backend/target/classes started by tao in /Users/tao/building-backend)
-2022-04-06 20:16:36.648 [main] INFO  com.mobisys.building.BuildingApplication - No active profile set, falling back to default profiles: default
-2022-04-06 20:16:38.311 [main] INFO  com.mobisys.building.BuildingApplication - Started BuildingApplication in 1.81 seconds (JVM running for 2.228)

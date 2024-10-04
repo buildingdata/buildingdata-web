@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>典型气象年</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../static/admin-lte/dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect. -->
+    <link rel="stylesheet" href="../static/admin-lte/dist/css/skins/skin-blue.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" tyle="text/css" href="../static/css/common.css">
+    <style>
+        a {
+            height: 50px
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-blue fixed">
+    <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header" style="height: 150px;">
+            <!-- Logo -->
+            <a href="" class="logo" style="background-color: #063c7c;width: 35  0px;height: 60px;">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <img src="../img/logo.png" style="width: 55px;height: 55px;">
+                <span style="font-size: 20px;font-weight: 600;height:60px;line-height:60px;">建筑节能设计基础数据共享平台</span>
+            </a>
+
+            <!-- 上边框 -->
+            <nav class="navbar navbar-static-top" role="navigation"
+                style="background-color: #063c7c;margin-left: 400px;">
+                <!-- Sidebar toggle button-->
+
+                <!-- 上边框右边菜单栏 -->
+                <div class="navbar-custom-menu">
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"
+                        style="margin-top:5px;height: 50px;">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="nav">
+                        <ul>
+                            <li><a href="index.html">平台首页</a></li>
+                            <li><a href="about.html">团队介绍</a></li>
+                            <li><a href="regest.html">注册</a></li>
+                            <li><a href="login.html">退出平台</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- 左侧导航栏菜单 -->
+        <aside class="main-sidebar" style="padding-top:75px">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- 左侧导航栏菜单 -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <!-- Optionally, you can add icons to the links -->
+                    <li><a href="javascript:location.href='mapInfo.html'" id="mapSearch" class="active "><i
+                                class="fa fa-search"></i><span>地图索引与台站查询</span></a></li>
+                    <li><a href="javascript:location.href='http://buildingdata.xauat.edu.cn/TC-dataset/'"><i
+                                    class="fa fa-database"></i><span>中国热舒适数据库</span></a></li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa  fa-bar-chart-o"></i> <span>建筑气候设计数据</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a
+                                    href="javascript:location.href=addSession('basicClimate.html',theRequest['stationId'])"><i
+                                        class="fa fa-square"></i><span>城市基本气候特征</span></a></li>
+                            <li><a
+                                    href="javascript:location.href=addSession('OnlineAnalysis.html',theRequest['stationId'])"><i
+                                        class="fa fa-square"></i><span>在线建筑气候分析</span></a></li>
+                            <li><a
+                                    href="javascript:location.href=addSession('climateContrast.html',theRequest['stationId'])"><i
+                                        class="fa fa-square"></i><span>城市气候特征对比分析</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview menu-open">
+                        <a href="#"><i class="fa fa-calculator"></i> <span>建筑节能设计参数</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li class="treeview"><a href="#"><i class="fa fa-square"></i><span>室内参数</span><span
+                                        class="pull-right-container"><i
+                                            class="fa fa-angle-left pull-right"></i></span></a>
+                                <ul class="treeview-menu">
+                                    <li style="overflow: hidden;"><a
+                                            href="javascript:location.href=addSession('inWarmComfortable.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="室内热舒适基本要求">室内舒适基本要求</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a id="outRoom"
+                                            href="javascript:location.href=addSession('inHotDesignParams.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="热工设计用室内参数">热工设计用室内参数</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a id="outRoom" href="javascript:location.href=addSession('indoorDesignParam.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="暖通空调设计用参数">暖通空调设计用参数</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a id="outRoom"  href="javascript:location.href=addSession('indoorComputeParam.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="模拟计算分析用参数">模拟计算分析用参数</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview"><a href="#"><i class="fa fa-square"></i><span>室外参数</span><span
+                                        class="pull-right-container"><i
+                                            class="fa fa-angle-left pull-right"></i></span></a>
+                                <ul class="treeview-menu">
+                                    <li style="overflow: hidden;"><a id="inRoom"
+                                            href="javascript:location.href=addSession('personHotdesign.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="热工设计用室外参数">热工设计用室外参数</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a id="outRoom"
+                                            href="javascript:location.href=addSession('personWarmWind.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span
+                                                title="供暖通风与空气调节设计室外用参数">暖通空调设计用室外参数</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview menu-open"><a href="#"><i
+                                        class="fa fa-square"></i><span>建筑能耗模拟气象年</span><span
+                                        class="pull-right-container"><i
+                                            class="fa fa-angle-left pull-right"></i></span></a>
+                                <ul class="treeview-menu" style="display: block;">
+                                    <li style="overflow: hidden;"><a style="color: #8cc63e;"
+                                            href="javascript:location.href=addSession('typicalMeteorologicalYear.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="典型气象年">典型气象年</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a
+                                            href="javascript:location.href=addSession('futureMeteorologicalYear.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="未来气象年">未来气象年</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a
+                                            href="javascript:location.href=addSession('extremeMeteorologicalYear.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="极端气象年">极端气象年</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:location.href='a.html'"><i class="fa fa-list-alt"></i>
+                            <span>数据接口</span></a></li>
+                    <li id="admin_input" style="display: none;"><a href="javascript:location.href=addSession('inputData.html',theRequest['stationId'])"><i
+                             class="fa fa-database"></i>
+                         <span>后台数据录入</span></a></li>
+                         <li id="admin_li" style="display: none;"><a href="javascript:location.href=addSession('management.html',theRequest['stationId'])" id="admin_a"><i class="fa fa-database" ></i>
+                         <span>管理员管理</span></a></li>
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- 主页面内容 -->
+        <div class="content-wrapper container-fluid" style="padding-top:65px ">
+            <div class="box box-success" style="margin-top: 20px;">
+                <div class="box-header with-border">
+                    <div class="box-title"><span style="font-size: 14px;color: #707070;font-weight: bold;">典型气象年：</span>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <!--选择台站城市-->
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-md-1" style="text-align: right;font-weight: bold;padding-top:5px;">站点省份:</div>
+                        <div class="col-md-2">
+                            <select class="form-control select2" id="province" onchange="provinceSelected()">
+
+                            </select>
+                        </div>
+                        <div class="col-md-1" style="text-align: right;font-weight: bold;padding-top:5px;">城市:</div>
+                        <div class="col-md-2">
+                            <select class="form-control select2" id="city" onchange="citySelected()">
+                            </select>
+                        </div>
+                        <div class="col-md-1" style="text-align: right;font-weight: bold;padding-top:5px">台站号:</div>
+                        <div class="col-md-2">
+                            <input type="" class="form-control" disabled="disabled" id="number" style="width: 100px;">
+                        </div>
+                        <div class="col-md-1">
+                            <div class="input-group" style="table-layout: fixed;">
+
+                                <span class="input-group-btn">
+                                    <input list="searchResult" class="form-control" name="search" id="search"
+                                        placeholder="请输入城市名或台站号" style="width: 200px;">
+                                    <datalist id="searchResult">
+                                        <option value="上海">
+                                        <option value="北京">
+                                    </datalist>
+                                </span>
+                                <span>
+                                    <button class="btn btn-default" type="submit" onclick="getFuzyResult()"><i
+                                            class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end 台站城市-->
+                    <!--给出海拔气候等信息-->
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-md-1" style="text-align: right;font-weight: bold;padding-top:5px;">经 度：</div>
+                        <div class="col-md-1"><input type="" class="form-control" disabled="disabled" id="longitude">
+                        </div>
+                        <div class="col-md-1" style="text-align: right;font-weight: bold;padding-top:5px;">纬 度：</div>
+                        <div class="col-md-1"><input type="" class="form-control" disabled="disabled" id="latitude">
+                        </div>
+                        <div class="col-md-1" style="text-align: right;font-weight: bold;padding-top:5px;">海 拔：</div>
+                        <div class="col-md-1"><input type="" class="form-control" disabled="disabled" id="altitude">
+                        </div>
+                        <div class="col-md-1" style="text-align: right;font-weight: bold;padding-top:5px;">气候区：</div>
+                        <div class="col-md-2"><input type="" class="form-control" disabled="disabled" id="climates">
+                        </div>
+                    </div>
+                    <!--end 海拔气候等信息-->
+
+                    <hr style="background-color:#d2d6de;height: 1px;border: none;">
+                    <!--选择参数类型-->
+                    <div class="row">
+                        <div class="col-md-1" style="text-align: right;font-weight: bold;padding-top: 5px;">
+                            参数类型:
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control select2" id="paramtype" onchange="paramselect()">
+                                <option>温度辐射综合图</option>
+                                <option>逐月份温湿度耦合图</option>
+
+                            </select>
+                        </div>
+
+                        <!--下载按钮-->
+                        <div class="row">
+
+                            <div class="col-md-2" style="text-align: right;font-weight: bold;padding-top: 5px;">
+                                典型年数据集下载:
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control select2" id="datatype" onchange="">
+                                    <option>bin文件数据集</option>
+                                    <option>epw文件数据集</option>
+                                    <option>tm2文件数据集</option>
+                                    <option>wea文件数据集</option>
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-1">
+                                <button onclick="downloadFile()" class="btn btn-success " style="margin: 4px 2px;">
+                                    下载数据集
+                                </button>
+
+                            <button id="datainfo" type="button" class="btn btn-success" data-toggle="modal"
+                                data-target="#modal-info" style="margin: 4px 2px;" onclick="alertData()">
+                                数据说明文档
+                            </button>
+                            <div class="modal modal-info fade" id="station-info">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">数据说明文档</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table table-bordered">
+                                                <tr>
+典型气象年包含我国城镇共计1019个，列表如下：<br>50136    漠河<br>50425 额尔古纳市<br>50431  根河市<br>50445    鄂伦春自治旗<br>50468 爱辉<br>50514 满洲里<br>50524    陈巴尔虎旗<br>50525  鄂温克族自治旗<br>50526    牙克石市<br>50527   海拉尔<br>50557    嫩江<br>50566 逊克<br>50603 新巴尔虎右旗<br>50618 新巴尔虎左旗<br>50632 博克图<br>50639    扎兰屯<br>50645    莫力达瓦达斡尔族自治旗<br>50647    阿荣旗<br>50656    北安<br>50727 阿尔山<br>50739    龙江<br>50742 富裕<br>50745 齐齐哈尔<br>50755   拜泉<br>50756 海伦<br>50758 明水<br>50774 伊春<br>50775 鹤岗<br>50788 富锦<br>50834 索伦<br>50850 大庆<br>50852 望奎<br>50853 北林<br>50873 佳木斯<br>50877    依兰<br>50884 双鸭山<br>50888    宝清<br>50913 乌拉盖<br>50915    东乌珠穆沁<br>50924  霍林郭勒<br>50928   巴雅尔吐胡硕<br>50934 突泉<br>50936 白城<br>50937 科尔沁右翼中旗<br>50945    大安<br>50946 松原<br>50948 乾安<br>50949 前郭<br>50950 肇州<br>50953 哈尔滨<br>50963    通河<br>50971 七台河<br>50973    勃利<br>50978 鸡西<br>50979 林口<br>51060 布尔津<br>51076    阿勒泰<br>51087    富蕴<br>51133 塔城<br>51137 裕民<br>51145 额敏<br>51156 和布克赛尔<br>51238  博乐<br>51243 克拉玛依<br>51288   北塔山<br>51334    精河<br>51357 沙湾<br>51359 玛纳斯<br>51368    昌吉<br>51369 米泉<br>51377 阜康<br>51378 吉木萨尔<br>51431   伊宁<br>51463 乌鲁木齐<br>51468   天山大西沟<br>51469  乌鲁木齐牧试站<br>51470    天池<br>51477 达坂城<br>51482    木垒<br>51495 十三间房<br>51542   巴音布鲁克<br>51567  焉耆<br>51571 托克逊<br>51572    吐鲁番东坎<br>51573  吐鲁番<br>51627    乌什<br>51628 阿克苏<br>51636    新和<br>51639 沙雅<br>51644 库车<br>51656 库尔勒<br>51704    阿图什<br>51707    伽师<br>51709 喀什<br>51716 巴楚<br>51717 岳普湖<br>51722    阿瓦提<br>51730    阿拉尔<br>51747    塔中<br>51765 铁干里克<br>51777   若羌<br>51802 英吉沙<br>51810    麦盖提<br>51811    莎车<br>51814 叶城<br>51815 泽普<br>51818 皮山<br>51826 策勒<br>51827 墨玉<br>51828 和田<br>51829 洛浦<br>51839 民丰<br>51886 茫崖<br>51931 于田<br>52101 巴里坤<br>52112    淖毛湖<br>52118    伊吾<br>52203 哈密<br>52267 额济纳旗<br>52313   红柳河<br>52323    马鬃山<br>52418    敦煌<br>52495 巴彦诺尔公<br>52515  肃北<br>52533 酒泉<br>52546 高台<br>52557 临泽<br>52602 冷湖<br>52643 肃南<br>52652 张掖<br>52656 民乐<br>52679 武威<br>52681 民勤<br>52713 大柴旦<br>52754    刚察<br>52784 古浪<br>52797 景泰<br>52818 格尔木<br>52825    诺木洪<br>52836    都兰<br>52854 青海湖151<br>52856 共和<br>52863 互助<br>52866 西宁<br>52868 贵德<br>52869 湟中<br>52875 平安<br>52876 民和<br>52877 化隆<br>52881 天祝<br>52884 皋兰<br>52885 永登<br>52896 白银<br>52908 五道梁<br>52941    沙珠玉<br>52943    兴海<br>52955 贵南<br>52957 同德<br>52963 尖扎<br>52968 泽库<br>52972 循化<br>52974 同仁<br>52978 夏河<br>52980 永靖<br>52981 东乡<br>52982 广河<br>52983 榆中<br>52984 临夏<br>52985 和政<br>52986 临洮<br>52988 康乐<br>52993 会宁<br>52995 安定<br>52998 渭源<br>53068 二连浩特<br>53083   那仁宝力格<br>53149  满都拉气象站<br>53192 阿巴嘎旗<br>53231   海力素<br>53276    朱日和<br>53289    镶黄旗<br>53336    乌拉特中旗<br>53337  五原<br>53348 大佘太<br>53357    固阳县气象局<br>53362 四子王<br>53367    希拉穆仁<br>53368   武川县<br>53378    察右中旗<br>53384   察右后旗<br>53385   商都<br>53391 化德<br>53419 磴口<br>53420 杭锦后旗<br>53433   乌拉特前旗<br>53446  包头市<br>53455    土右旗气象局<br>53457 达拉特旗<br>53463   呼和浩特<br>53464   土默特左旗<br>53466  呼和浩特郊区站<br>53467    托克托县<br>53469   和林格尔县<br>53472  卓资<br>53475 凉城<br>53481 察右前旗<br>53483   兴和<br>53484 丰镇<br>53487 大同<br>53488 大同县<br>53490    天镇<br>53499 万全<br>53502 吉兰太<br>53512    乌海<br>53513 临河<br>53518 石嘴山<br>53519    惠农<br>53522 伊克乌素<br>53529   鄂托克旗<br>53533   杭锦旗<br>53543    东胜<br>53545 伊金霍洛旗<br>53553  准格尔旗<br>53562   清水河县<br>53564   河曲<br>53578 朔州<br>53585 繁峙<br>53588 五台山<br>53594    灵丘<br>53603 沙湖<br>53610 贺兰<br>53611 平罗<br>53612 吴忠<br>53614 银川<br>53615 陶乐<br>53617 青铜峡<br>53618    永宁<br>53619 灵武<br>53644 乌审旗<br>53646    榆林<br>53651 神木<br>53663 五寨<br>53674 忻州（忻府区）<br>53676    定襄<br>53687 平定<br>53692 唐县<br>53704 中卫<br>53707 兴仁<br>53723 盐池<br>53725 定边<br>53730 鄂托克前旗<br>53732  河南<br>53735 靖边<br>53740 横山<br>53751 子洲<br>53754 绥德<br>53764 离石<br>53772 太原<br>53775 太谷<br>53776 榆次<br>53782 阳泉<br>53783 昔阳<br>53785 石家庄（柏乡）<br>53798    邢台<br>53806 海原<br>53810 同心<br>53817 固原<br>53821 环县<br>53829 庆城<br>53845 延安<br>53854 延长<br>53859 吉县<br>53863 介休<br>53875 沁源<br>53877 安泽<br>53881 韦州<br>53883 任县<br>53884 襄垣<br>53892 邯郸<br>53903 西吉<br>53906 静宁<br>53908 通渭<br>53914 隆德<br>53915 崆峒<br>53916 泾源<br>53917 庄浪<br>53923 西峰<br>53924 灵台<br>53925 镇原<br>53926 泾川<br>53927 华亭<br>53928 崇信<br>53930 华池<br>53934 合水<br>53935 正宁<br>53937 宁县<br>53938 旬邑<br>53942 洛川<br>53948 蒲城<br>53957 河津<br>53959 盐湖<br>53963 侯马<br>53968 垣曲<br>53975 阳城<br>53976 晋城<br>53980 肥乡<br>53982 焦作<br>53984 修武<br>53986 新乡<br>53997 延津<br>54012 西乌珠穆沁<br>54024  富河<br>54026 扎鲁特<br>54027    巴林左旗<br>54031   高力板<br>54039    舍伯吐<br>54041    通榆<br>54047 科左中旗<br>54063   扶余<br>54064 农安<br>54065 德惠<br>54094 牡丹江<br>54102    锡林浩特<br>54113   巴林右旗<br>54117   克什克腾旗<br>54122  阿鲁科尔沁旗<br>54132 青龙山<br>54134    开鲁<br>54135 通辽<br>54142 双辽<br>54161 长春<br>54165 双阳<br>54171 永吉<br>54172 吉林城郊<br>54181   蛟河<br>54187 安图<br>54195 汪清<br>54204 正镶白旗<br>54205   正蓝旗<br>54208    多伦县<br>54213    翁牛特旗<br>54214   岗子<br>54218 赤峰<br>54223 奈曼<br>54225 敖汉旗<br>54231    科左后旗<br>54234   库伦<br>54236 彰武<br>54243 昌图<br>54249 铁岭<br>54254 开原<br>54260 辽源<br>54263 磐石<br>54266 梅河口<br>54273    桦甸<br>54284 东岗<br>54285 二道<br>54286 和龙<br>54292 延吉<br>54305 太仆寺旗<br>54313   喀喇沁旗<br>54316   八里罕<br>54320    宁城县<br>54321    建平镇<br>54324    朝阳<br>54326 建平县<br>54333    新民<br>54337 锦州<br>54340 苏家屯<br>54342    沈阳<br>54346 本溪<br>54347 辽阳<br>54351 抚顺<br>54353 新宾<br>54363 通化<br>54371 白山<br>54374 临江<br>54377 集安<br>54386 长白<br>54401 张家口<br>54406    延庆<br>54408 涿鹿<br>54416 密云<br>54419 怀柔<br>54423 承德<br>54424 平谷<br>54433 朝阳<br>54439 迁安<br>54449 秦皇岛<br>54452    建昌<br>54453 葫芦岛（连山区）<br>54455   兴城<br>54470 大洼<br>54471 营口<br>54476 熊岳<br>54486 岫岩<br>54497 丹东<br>54499 昌平<br>54511 北京<br>54515 廊坊<br>54521 香河<br>54525 宝坻<br>54527 天津<br>54528 北辰区<br>54539    乐亭<br>54568 金州<br>54579 长海<br>54584 庄河<br>54596 房山<br>54602 保定<br>54606 饶阳<br>54613 大城<br>54616 沧州<br>54618 泊头<br>54623 塘沽<br>54631 广宗<br>54662 大连<br>54702 衡水<br>54705 南宫<br>54706 清河<br>54714 德州<br>54727 章丘<br>54729 高青<br>54734 滨州<br>54736 东营<br>54744 垦利<br>54753 龙口<br>54776 成山头<br>54804    大名<br>54806 聊城<br>54823 济南<br>54826 泰山<br>54828 莱芜<br>54830 淄博<br>54842 平度<br>54843 潍坊<br>54857 青岛<br>54863 海阳<br>54900 濮阳<br>54906 菏泽<br>54914 巨野<br>54915 济宁<br>54927 滕州<br>54936 莒县<br>54938 临沂<br>55228 狮泉河<br>55248    改则<br>55279 班戈<br>55299 那曲<br>55437 普兰<br>55472 申扎<br>55493 当雄<br>55569 拉孜<br>55572 南木林<br>55578    日喀则<br>55591    拉萨<br>55593 墨竹工卡<br>55597   琼结<br>55655 聂拉木<br>55664    定日<br>55680 江孜<br>55696 隆子<br>55773 帕里<br>56004 沱沱河<br>56016    治多<br>56018 杂多<br>56021 曲麻莱<br>56029    玉树<br>56033 玛多<br>56034 清水河<br>56038    石渠<br>56043 玛沁<br>56045 甘德<br>56046 达日<br>56071 碌曲<br>56074 玛曲<br>56079 若尔盖<br>56080    合作<br>56081 临潭<br>56082 卓尼<br>56084 迭部<br>56091 漳县<br>56092 陇西<br>56094 舟曲<br>56095 宕昌<br>56096 武都<br>56097 九寨沟<br>56106    索县<br>56116 丁青<br>56128 类乌齐<br>56137    昌都<br>56146 甘孜<br>56147 白玉<br>56151 班玛<br>56152 色达<br>56158 炉霍<br>56164 壤塘<br>56168 金川<br>56171 阿坝<br>56172 马尔康<br>56173    红原<br>56178 小金<br>56180 茂县<br>56182 松潘<br>56183 汶川<br>56184 理县<br>56185 黑水<br>56187 成都（温江）<br>56188 都江堰<br>56192    文县<br>56196 绵阳<br>56198 德阳<br>56228 八宿<br>56247 巴塘<br>56251 新龙<br>56263 丹巴<br>56267 雅江<br>56280 名山<br>56298 资阳<br>56312 林芝<br>56317 米林<br>56357 稻城<br>56371 泸定<br>56385 峨眉山<br>56386    乐山<br>56387 峨边<br>56396 自贡<br>56434 察隅<br>56441 得荣<br>56443 乡城<br>56444 德钦<br>56462 九龙<br>56473 甘洛<br>56474 冕宁<br>56478 喜德<br>56479 昭觉<br>56483 绥江<br>56485 雷波<br>56487 美姑<br>56489 永善<br>56492 宜宾<br>56497 盐津<br>56543 香格里拉<br>56548   维西<br>56565 盐源<br>56567 宁蒗<br>56569 德昌<br>56571 西昌<br>56575 普格<br>56578 宁南<br>56580 布拖<br>56582 大关<br>56584 金阳<br>56585 鲁甸<br>56594 彝良<br>56595 镇雄<br>56596 威信<br>56641 福贡<br>56645 兰坪<br>56649 洱源<br>56651 丽江<br>56652 永胜<br>56654 鹤庆<br>56664 华坪<br>56665 盐边<br>56666 攀枝花<br>56669    永仁<br>56673 巧家<br>56675 会东<br>56688 东川<br>56691 威宁<br>56697 宣威<br>56739 腾冲<br>56742 云龙<br>56745 漾濞<br>56746 永平<br>56752 宾川<br>56755 弥渡<br>56757 巍山<br>56761 大姚<br>56764 姚安<br>56766 牟定<br>56767 南华<br>56772 富民<br>56774 武定<br>56777 禄丰<br>56778 昆明<br>56782 马龙<br>56783 曲靖<br>56785 嵩明<br>56790 富源<br>56792 普安<br>56793 盘县<br>56835 陇川<br>56836 盈江<br>56839 镇康<br>56840 粱河<br>56841 龙陵<br>56842 施甸<br>56843 昌宁<br>56844 芒市<br>56846 凤庆<br>56849 永德<br>56851 南涧<br>56854 云县<br>56856 景东<br>56862 双柏<br>56863 安宁<br>56867 镇沅<br>56869 新平<br>56870 易门<br>56871 晋宁<br>56873 澄江<br>56876 江川<br>56878 通海<br>56879 华宁<br>56880 宜良<br>56881 石林<br>56883 师宗<br>56885 弥勒<br>56886 泸西<br>56889 丘北<br>56891 罗平<br>56898 峨山<br>56944 沧源<br>56948 西盟<br>56949 孟连<br>56950 双江<br>56951 临沧<br>56952 景谷<br>56958 勐海<br>56959 景洪<br>56962 墨江<br>56964 思茅<br>56969 勐腊<br>56970 石屏<br>56975 红河<br>56976 元阳<br>56978 绿春<br>56982 开远<br>56984 个旧<br>56985 蒙自<br>56987 金平<br>56992 西畴<br>56994 文山<br>56995 马关<br>57001 甘谷<br>57002 秦安<br>57003 陇县<br>57004 武山<br>57007 礼县<br>57008 西和<br>57011 清水<br>57012 张家川<br>57014    麦积<br>57021 千阳<br>57025 凤翔<br>57028 太白<br>57030 永寿<br>57034 武功<br>57037 耀县<br>57048 秦都<br>57051 三门峡<br>57052    永济<br>57067 卢氏<br>57071 孟津<br>57072 孟州<br>57083 郑州<br>57085 新密<br>57089 许昌<br>57091 开封<br>57099 太康<br>57102 成县<br>57105 康县<br>57106 略阳<br>57110 徽县<br>57111 两当<br>57124 留坝<br>57127 汉中<br>57131 西安（泾河）<br>57143 商县<br>57154 商南<br>57155 山阳<br>57156 西峡<br>57178 南阳<br>57181 宝丰<br>57183 临颍<br>57186 漯河<br>57194 上蔡<br>57195 周口（川汇区）<br>57206    广元<br>57211 宁强<br>57232 石泉<br>57238 镇巴<br>57245 安康<br>57249 竹溪<br>57251 郧西<br>57256 十堰<br>57259 房县<br>57265 老河口<br>57278    襄阳<br>57279 枣阳<br>57285 桐柏<br>57292 平舆<br>57293 新蔡<br>57297 信阳<br>57306 阆中<br>57313 巴中<br>57326 宣汉<br>57328 达川<br>57343 镇坪<br>57348 奉节<br>57355 巴东<br>57359 兴山<br>57377 荆门<br>57378 钟祥<br>57395 大悟<br>57399 麻城<br>57405 遂宁<br>57411 高坪<br>57415 广安<br>57420 大竹<br>57432 万州<br>57445 建始<br>57447 恩施<br>57461 宜昌<br>57476 荆州<br>57481 应城<br>57482 孝感<br>57483 天门<br>57485 仙桃<br>57494 武汉<br>57496 鄂州<br>57502 大足<br>57510 铜梁<br>57512 合川<br>57517 江津<br>57523 丰都<br>57536 黔江<br>57544 龙山<br>57558 张家界<br>57562    石门<br>57573 监利<br>57574 南县<br>57581 洪湖<br>57583 嘉鱼<br>57604 纳溪<br>57606 桐梓<br>57612 綦江<br>57625 正安<br>57633 酉阳<br>57637 德江<br>57642 保靖<br>57643 永顺<br>57647 松桃<br>57649 吉首<br>57662 常德<br>57669 安化<br>57671 沅江<br>57673 湘阴<br>57674 赫山<br>57680 汨罗<br>57682 平江<br>57687 长沙<br>57696 宜丰<br>57710 仁怀<br>57718 息烽<br>57722 湄潭<br>57729 余庆<br>57734 石阡<br>57741 铜仁<br>57745 芷江<br>57752 溆浦<br>57761 新化<br>57763 娄底<br>57773 湘潭<br>57774 双峰<br>57776 南岳<br>57779 攸县<br>57780 株洲<br>57789 莲花<br>57792 分宜<br>57799 吉安县<br>57805    织金<br>57806 安顺<br>57808 普定<br>57816 贵阳<br>57825 凯里<br>57827 都匀<br>57832 三穗<br>57839 黎平<br>57840 天柱<br>57859 资源<br>57866 永州<br>57872 衡阳<br>57874 常宁<br>57875 衡南<br>57883 夏坪<br>57889 桂东<br>57896 遂川<br>57902 兴仁<br>57907 兴义<br>57909 册亨<br>57910 紫云<br>57912 惠水<br>57926 荔波<br>57936 从江<br>57947 融安<br>57954 临桂<br>57957 桂林<br>57965 道县<br>57972 郴州<br>57973 桂阳<br>57974 嘉禾<br>57992 南康<br>57993 赣县<br>58005 商丘<br>58006 虞城<br>58011 单县<br>58015 砀山<br>58016 萧县<br>58024 枣庄<br>58026 邳州<br>58027 徐州<br>58038 沭阳<br>58040 赣榆<br>58044 连云港<br>58047    灌云<br>58102 亳州<br>58111 永城<br>58116 淮北<br>58118 蒙城<br>58122 宿州<br>58127 怀远<br>58130 睢宁<br>58131 宿豫<br>58135 泗洪<br>58138 盱眙<br>58139 洪泽<br>58141 淮安<br>58143 阜宁<br>58150 射阳<br>58154 盐城<br>58158 大丰<br>58203 阜阳<br>58208 固始<br>58215 寿县<br>58221 蚌埠<br>58224 淮南<br>58225 定远<br>58234 来安<br>58236 滁州<br>58238 南京<br>58241 高邮<br>58244 江都<br>58245 扬州<br>58251 东台<br>58255 如皋<br>58265 吕泗<br>58269 启东<br>58301 商城<br>58311 六安<br>58314 霍山<br>58319 桐城<br>58321 合肥<br>58326 巢湖<br>58330 含山<br>58334 芜湖<br>58336 马鞍山<br>58349    苏州<br>58353 张家港<br>58354    无锡<br>58356 昆山<br>58362 宝山<br>58366 崇明<br>58367 上海（徐家汇）<br>58369    南汇<br>58424 安庆<br>58429 铜陵<br>58433 宣城<br>58436 宁国<br>58441 广德<br>58448 临安<br>58450 湖州<br>58452 嘉兴<br>58453 绍兴<br>58457 杭州<br>58460 金山<br>58463 奉贤<br>58464 平湖<br>58467 慈溪<br>58472 嵊泗<br>58477 定海<br>58507 武宁<br>58514 星子<br>58517 都昌<br>58519 波阳<br>58520 祁门<br>58527 景德镇<br>58531    屯溪<br>58544 建德<br>58549 金华<br>58553 上虞<br>58557 义乌<br>58561 镇海<br>58562 鄞州<br>58600 靖安<br>58606 南昌<br>58608 樟树<br>58616 余江<br>58622 德兴<br>58626 贵溪<br>58633 衢州<br>58634 玉山<br>58637 上饶<br>58642 武义<br>58652 仙居<br>58659 温州<br>58664 温岭<br>58665 洪家<br>58666 大陈<br>58667 玉环<br>58693 新建<br>58705 永丰<br>58718 南丰<br>58719 黎川<br>58725 邵武<br>58734 建阳<br>58735 松溪<br>58737 建瓯<br>58742 云和<br>58744 寿宁<br>58752 瑞安<br>58806 宁都<br>58818 宁化<br>58820 泰宁<br>58824 明溪<br>58828 三明<br>58837 尤溪<br>58843 霞浦<br>58847 福州<br>58917 武平<br>58921 永安<br>58935 德化<br>58946 莆田<br>59001 隆林<br>59007 广南<br>59021 凤山<br>59023 河池<br>59037 都安<br>59041 柳城<br>59046 柳州<br>59058 蒙山<br>59065 贺州<br>59075 阳山<br>59082 韶关<br>59087 佛冈<br>59088 英德<br>59092 龙南<br>59097 新丰<br>59102 寻乌<br>59107 龙川<br>59116 大埔<br>59117 梅县<br>59129 漳浦<br>59133 崇武<br>59134 厦门<br>59205 富宁<br>59209 那坡<br>59211 百色<br>59218 靖西<br>59224 田东<br>59228 平果<br>59242 来宾<br>59256 藤县<br>59265 梧州<br>59268 郁南<br>59271 广宁<br>59280 清远<br>59287 广州<br>59289 东莞<br>59293 河源<br>59294 增城<br>59298 惠阳<br>59303 五华<br>59304 紫金<br>59306 揭西<br>59312 潮州<br>59315 揭阳<br>59316 汕头<br>59317 惠来<br>59324 南澳<br>59417 龙州<br>59431 南宁<br>59446 灵山<br>59451 北流<br>59462 罗定<br>59471 云浮<br>59473 鹤山<br>59476 新会<br>59485 中山<br>59488 珠海<br>59501 汕尾<br>59502 陆丰<br>59632 钦州<br>59644 北海<br>59659 茂名<br>59663 阳江<br>59664 电白<br>59758 海口<br>59838 东方<br>59849 琼中<br>59856 文昌<br>59948 三亚<br>59981 西沙<br>59985 珊瑚<br>52889 兰州<br>56294 成都<br>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline pull-right"
+                                                data-dismiss="modal">关闭</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                    
+                    </div>
+                            </div>
+                        </div>
+                        <!--end 下载按钮-->
+
+
+                </div>
+                    <!--end 选择参数类型-->
+                    <!--空气湿度图-->
+                    <div class="row">
+                        <div style="margin-top: 20px;margin-left:20px; " class="col-md-10" id="temperRadiation">
+                            <div class="box box-success">
+                                <div class="box-header with-border">
+                                    <th class="box-title">温度辐射综合图</th>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                                class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div id="temperRadiationmain" style="width: 900px;height:450px; margin:0 30px;">
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                        <!-- <div style="margin-top: 20px;margin-left:20px; " class="col-md-10" id="clound">
+                            <div class="box box-success">
+                                <div class="box-header with-border">
+                                    <th class="box-title">云量统计图</th>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div id="cloundmain" style="width: 700px;height:450px;"></div>
+                                </div>
+                                /.box-body
+                            </div>
+                        </div> -->
+
+                        <div style="margin-top: 20px;margin-left:20px; " class="col-md-10" id="temperSolid">
+                            <div class="box box-success" style="width: 1100px;" id="downloadzone">
+                                <div class="box-header with-border">
+                                    <th class="box-title">逐月份温湿度耦合图</th>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" id="download"><i
+                                                class="fa fa-download"></i></button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                                class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body" style="width: 1200px;">
+                                    <div id="temperSolidmain">
+                                        <div class="row" style="margin-bottom: 20px;">
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain1" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">一月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain2" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">二月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain3" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">三月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain4" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">四月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain5" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">五月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain6" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">六月</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="row" style="margin-bottom: 20px;">
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain7" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">七月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain8" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">八月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain9" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">九月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain10" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">十月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain11" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">十一月</span>
+                                            </div>
+                                            <div class="col-md-4" style="width: 175px; padding: 0;">
+                                                <div id="temperSolidmain12" style="width: 175px;height:150px;"></div>
+                                                <span
+                                                    style="display:inline-block;width: 200px;font-size: medium;color: #000;text-align: center;">十二月</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px;margin-left:20px; " class="col-md-10" id="windRose">
+                            <div class="box box-success">
+                                <div class="box-header with-border">
+                                    <th class="box-title">风玫瑰图</th>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                                class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div id="windRosemain" style="width:700px;height:450px;"></div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--end 空气湿度图-->
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED JS SCRIPTS -->
+    <!-- jQuery 3 -->
+    <script src="../static/admin-lte/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../static/admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="../static/admin-lte/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../static/admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../static/admin-lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../static/admin-lte/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../static/admin-lte/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../static/admin-lte/dist/js/demo.js"></script>
+    <script type="text/javascript" src="../js/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.2.3/echarts.min.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.3.0-rc.2/echarts-en.js"></script>
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <!-- <script type="text/javascript" src="../js/interface.js"></script> -->   
+    <script type="text/javascript" src="../js/typicalMeteorologicalYear.js" defer=true></script>
+    <script type="text/javascript" src="../js/loginCheck.js"></script>
+<script type="text/javascript" src="../js/typicalStaionInit.js"></script>
+    <script type="text/JavaScript" src="../js/html2canvas.min.js"></script>
+    <script type="text/JavaScript" src="../js/base64.js"></script>
+    <script type="text/JavaScript" src="../js/canvas2image.js"></script>
+</body>
+
+</html>

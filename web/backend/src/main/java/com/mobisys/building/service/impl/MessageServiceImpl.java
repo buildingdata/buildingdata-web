@@ -24,7 +24,7 @@ public class MessageServiceImpl implements MessageService {
     //短信签名名称——请在控制台签名管理页面签名名称一列查看。
     static final String SignName = "建筑节能";
     //短信模板ID——请在控制台模板管理页面模板CODE一列查看。
-    static final String TemplateCode = "SMS_177243057";
+    static final String TemplateCode = "SMS_TemplateCode";
 
     /**
      * 随机生成6位数字作为验证码

@@ -1,0 +1,83 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- 左侧导航栏菜单 -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <!-- Optionally, you can add icons to the links -->
+            <li><a href="javascript:location.href='mapInfo.html'" id="mapSearch" class="active "><i
+                        class="fa fa-search"></i><span>地图索引与台站查询</span></a></li>
+            <li><a href="javascript:location.href='http://buildingdata.xauat.edu.cn/TC-dataset/'"><i
+                            class="fa fa-database"></i><span>中国热舒适数据库</span></a></li>
+            <li class="treeview" class="asidei">
+                <a href="#"><i class="fa  fa-bar-chart-o"></i> <span>建筑气候设计数据</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="javascript:location.href=addSession('basicClimate.html',theRequest['stationId'])"><i
+                                class="fa fa-square"></i><span>城市基本气候特征</span></a></li>
+                    <li><a href="javascript:location.href=addSession('OnlineAnalysis.html',theRequest['stationId'])"><i
+                                class="fa fa-square"></i><span>在线建筑气候分析</span></a></li>
+                    <li><a href="#"><i class="fa fa-square"></i><span>城市气候特征对比分析</span></a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-calculator"></i> <span>建筑节能设计参数</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="treeview"><a href="#"><i class="fa fa-square"></i><span>室内参数</span><span
+                                class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li style="overflow: hidden;"><a id="inRoom" href="#"><i class="fa fa-square"></i><span
+                                        title="室内热舒适基本要求">室内舒适基本要求</span></a>
+                            </li>
+                            <li style="overflow: hidden;"><a id="outRoom" href="#"><i class="fa fa-square"></i><span
+                                        title="热工设计用参数">热工设计用参数</span></a></li>
+                            <li style="overflow: hidden;"><a id="outRoom" href="#"><i class="fa fa-square"></i><span
+                                        title="暖通空调设计用参数">暖通空调设计用参数</span></a></li>
+                            <li style="overflow: hidden;"><a id="outRoom" href="#"><i class="fa fa-square"></i><span
+                                        title="模拟计算分析用参数">模拟计算分析用参数</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview"><a href="#"><i class="fa fa-square"></i><span>室外参数</span><span
+                                class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li style="overflow: hidden;"><a id="inRoom"
+                                    href="javascript:location.href=addSession('personHotdesign.html',theRequest['stationId'])"><i
+                                        class="fa fa-square"></i><span title="民用建筑热工设计用参数">民用建筑热工设计用参数</span></a>
+                            </li>
+                            <li style="overflow: hidden;"><a id="outRoom" href="#"><i class="fa fa-square"></i><span
+                                        title="供暖通风与空气调节设计室外用参数">供暖通风与空气调节设计室外用参数</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview"><a href="#"><i class="fa fa-square"></i><span>建筑能耗模拟气象年</span><span
+                                class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li style="overflow: hidden;"><a
+                                    href="javascript:location.href=addSession('typicalMeteorologicalYear.html',theRequest['stationId'])"><i
+                                        class="fa fa-circle"></i><span title="典型气象年">典型气象年</span></a>
+                            </li>
+                            <li style="overflow: hidden;"><a
+                                    href="javascript:location.href=addSession('futureMeteorologicalYear.html',theRequest['stationId'])"><i
+                                        class="fa fa-circle"></i><span title="未来气象年">未来气象年</span></a>
+                            </li>
+                            <li style="overflow: hidden;"><a
+                                    href="javascript:location.href=addSession('extremeMeteorologicalYear.html',theRequest['stationId'])"><i
+                                        class="fa fa-circle"></i><span title="极端气象年">极端气象年</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-list-alt"></i>
+                    <span>数据接口</span></a></li>
+            <li><a href="#"><i class="fa fa-database"></i> <span>后台数据录入</span></a></li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+
+* { font: 13px/1.5 '微软雅黑'; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -box-sizing: border-box; padding:0; margin:0; list-style:none; box-sizing: border-box; }
+body, html { height:100%; overflow:hidden; }
+body {background:#d9f3ff; background-size: cover; }
+a { color:#1874da; text-decoration:none; cursor:pointer; }
+img{ border:none;}
+
+.login_box{ width:100%; height:100%; margin:0 auto;}
+.login_left{float:left;width:40%; height:100%; background:url(../images/login-bg.jpg) no-repeat; padding:4%;}
+.login_right{float:left;width:50%;height:100%; padding-top:10%; padding-left:5%;}
+.login_box .login_l_img{ float:left;width:100%; height:auto; margin-top:12%; margin-bottom:15%;}
+.login_box .login_l_img img{width:100%; height:auto; }
+.login_txt{float:left; width:90%; line-height:34px;font-size:16px; font-family:"微软雅黑"; color:#c8c9ca; margin-left:11.5%;}
+.more{
+	float:left;
+	width:160px;
+	height:45px;
+	line-height:45px;
+	font-size:16px;
+	color:#000;
+	text-align:center;
+	border-radius:5px;
+	cursor:pointer;
+	background-color:#c7c7ca;
+	display:block;
+	margin-top:14%;
+	margin-left:11.5%;
+}
+.more a{
+	color:#000;
+}
+.more a:hover{
+	color:#f00;
+}
+
+
+
+.login {margin:0 auto;height:360px; width:420px; padding:30px; 
+        background-color: #ffffff;
+		border-radius:6px;
+		box-sizing: border-box; 
+		position:relative; 
+		}
+.login_logo{ width:100px; height:100px; border:5px solid #93defe;border-radius:100px; background:#fff; text-align:center; line-height:110px; position:absolute; top:-60px; right:160px;}
+.login_name{ width:100%; float:left; text-align:center; margin-top:20px;}
+.login_name p{ width:100%; text-align:center; font-size:18px; color:#444; padding:10px 0 20px;}
+.login_logo img{ width:60px; height:60px;display: inline-block; vertical-align: middle;}
+input[type=text], input[type=file], input[type=password], input[type=email], select { border: 1px solid #DCDEE0; vertical-align: middle; border-radius: 3px; height: 50px; padding: 0px 16px; font-size: 14px; color: #555555; outline:none; width:100%;margin-bottom: 15px;line-height:50px; color:#888;}
+input[type=text]:focus, input[type=file]:focus, input[type=password]:focus, input[type=email]:focus, select:focus { border: 1px solid #1874da; }
+input[type=submit], input[type=button] { display: inline-block; vertical-align: middle; padding: 12px 24px; margin: 0px; font-size:16px; line-height: 24px; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; color: #ffffff; background-color: #1874da; border-radius: 3px; border: none; -webkit-appearance: none; outline:none; width:100%; }
+.copyright {margin:0 auto;font-size:15px; color:#666; display:block;width:100%;text-align:center;padding-top:40px;}
+
+#password_text{border: 1px solid #DCDEE0; vertical-align: middle; border-radius: 3px; height: 50px; padding: 0px 16px; font-size: 14px; color: #888; outline:none; width:100%;margin-bottom: 15px;display: block; line-height:50px;}
+.login_wjmm{float:left;width:100%; line-height:60px; text-align:center; text-indent:10px;}
+.login_wjmm a{color:#444;}
+.login_wjmm a:hover{color:#f00;}
+.login_ljzc{float:right;width:50%; line-height:60px; text-align:right;}
+.login_ljzc a{color:#444;}
+.login_ljzc a:hover{color:#f00;}

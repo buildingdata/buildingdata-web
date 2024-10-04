@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+
+<HEAD>
+    <TITLE>建筑节能设计基础参数数据共享接口管理系统</TITLE>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <LINK href="../images/style.css" type=text/css rel=stylesheet>
+    <script language="javascript" type="text/javascript"> 
+        window.location.href='http://202.200.158.92:8080/DesignParamatersMonitor';
+    </script>
+    <style type="text/css">
+       
+        body {
+            background-color: #E0E3DF;
+            margin-left: 0px;
+            margin-top: 60px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
+        .style3 {
+            color: #999999
+        }
+    
+    </style>
+</HEAD>
+
+<BODY>
+    <!-- ImageReady Slices (main.psd) -->
+    <TABLE WIDTH=521 BORDER=0 align="center" CELLPADDING=0 CELLSPACING=0>
+        <TR>
+            <TD><IMG SRC="../images/main_01.jpg" WIDTH=150 HEIGHT=64 ALT=""></TD>
+            <TD><IMG SRC="../images/main_02.jpg" WIDTH=371 HEIGHT=64 ALT=""></TD>
+        </TR>
+        <TR>
+            <TD><IMG SRC="../images/main_03.jpg" WIDTH=150 HEIGHT=81 ALT=""></TD>
+            <TD><IMG SRC="../images/main_04.jpg" WIDTH=371 HEIGHT=81 ALT=""></TD>
+        </TR>
+        <TR>
+            <TD><IMG SRC="../images/main_05.jpg" WIDTH=150 HEIGHT=131 ALT=""></TD>
+            <TD><IMG SRC="../images/main_06.jpg" WIDTH=371 HEIGHT=131 ALT=""></TD>
+        </TR>
+        <TR>
+            <!--  <TD><a href="index1.htm"><IMG SRC="../images/main_07.jpg" ALT="" WIDTH=150 HEIGHT=151 border="0"></a></TD> -->
+            <TD><IMG SRC="../images/main_07.jpg" ALT="" WIDTH=150 HEIGHT=151 border="0"></TD>
+            <TD valign="top" background="../images/main_08.jpg" WIDTH=371 HEIGHT=151>
+                <s:form name="frmLogin" action="Login" theme="simple">
+                    <table border=0 cellPadding=0 cellSpacing=6>
+                        
+                        <tr>
+                            <td colspan="3" align="center">&nbsp;<font color="#FF0000"></font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%" align="center"><span class=bai>请选择:</span> </td>
+                            <td width="60%" height="20" align="left">
+                                <input type="radio" name="group" value="user">用户
+                                <input type="radio" name="group" value="director" checked>维护员
+                            </td>
+                            <td width="20%"></td>
+                        </tr>
+                        <tr>
+                            <td width="20%" align="center"><span class=bai>用户名:</span> </td>
+                            <td width="60%" height="20" align="left">
+                                <s:textfield label="用户名" name="id" size="20" maxlength="20" />
+                            </td>
+                            <td width="20%" height="20" align="left">
+                                <a href="SubscriberRegister.jsp"><img src="../images/register.jpg"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="20" align="center"> <span class=bai>密　码:</span> </td>
+                            <td width="60%" height="20" align="left">
+                                <s:password label="密　码" name="password" size="20" maxlength="20" />
+                            </td>
+                            <td width="20%" height="20" align="left">
+                                <s:submit type="image" onclick="return confirmAct();" src="../images/login_index.gif"
+                                    align="right" />
+                            </td>
+
+                        </tr>
+                    </table>
+                </s:form>
+
+            </TD>
+        </TR>
+    </TABLE>
+    <span class="font12"><br></span>
+    <div align="center" class="font12">
+        <br><span class="style3">版权单位：西安建筑科技大学</span>
+        <br><span class="style3">支持课题：建筑节能设计基础参数应用模式与共享平台(编号：2018YFC070450X)</span>
+    </div>
+    <map name="Map">
+        <area shape="rect" coords="85,69,187,160" href="index1.htm">
+    </map>
+    <!-- End ImageReady Slices -->
+</BODY>
+
+</html>

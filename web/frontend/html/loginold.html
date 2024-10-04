@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登录</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../static/admin-lte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../static/admin-lte/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login">
+    <!-- BEGIN LOGO -->
+    <div class="logo" style="color: white;font-weight: bold;font-size: 22px;" >
+        建筑节能设计基础参数共享平台
+    </div>
+    <!-- END LOGO -->
+    <!-- BEGIN LOGIN -->
+    <!--box-shadow:5px 5px 5px green-->
+    <div class="content" style="box-shadow:3px 3px 3px #a4d2f4">
+        <!-- BEGIN LOGIN FORM -->
+        <form class="login-form" id="login-form" method="post" >
+            <div class="form-body">
+                <h3 class="form-title " style="color: #00a65a;">登录</h3>
+                <div class="alert alert-danger display-hide" style="display: none;">
+                    <button class="close" data-close="alert"></button> 表单验证失败，请仔细检查！ </div>
+                <div class="alert alert-success display-hide" style="display: none;">
+                    <button class="close" data-close="alert"></button> 表单验证成功! </div>
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">用户名</label>
+                    <input class="form-control form-control-solid placeholder-no-fix" id="login_username" type="text" autocomplete="off" placeholder="请输入用户名" name="username" /> </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">密码</label>
+                    <input class="form-control form-control-solid placeholder-no-fix" id="login_passwd" type="password" autocomplete="off" placeholder="请输入密码" name="password" /> </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-success uppercase" onclick="login()"><span style="color: white;">登录</span></button>
+                    <label class="rememberme check mt-checkbox mt-checkbox-outline"  style="display: inline-block;">
+                            <input type="checkbox" name="remember" value="1" />记住密码
+                            <span></span>
+                        </label>
+                    <a href="javascript:login_go_forget();" id="forget-password" class="forget-password" style="color: #f39c12;">忘记密码?</a>
+                </div>
+                <div class="create-account">
+                    <p>
+                        <a href="javascript:location.href='register.html'" id="register-btn"
+                            class="uppercase" style="color:#8cc63e;">注册</a>
+                    </p>
+                </div> 
+            </div>
+        </form>
+        <!-- END LOGIN FORM -->
+    </div>
+    <div class="copyright"> 2019 © 西安电子科技大学. AND 西安建筑科技大学. </div>
+    <script src="../static/admin-lte/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../static/admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="../static/admin-lte/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../static/admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../static/admin-lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../static/admin-lte/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../static/admin-lte/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="../static/js/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <!-- 表单验证框架-->
+    <script src="../static/js/jquery-validation/js/localization/messages_zh.min.js" type="text/javascript"
+        charset="UTF-8"></script>
+    <!--jQuery Validate 插件表单自动验证-->
+    <script src="../static/js/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+    <!--jQuery Validate 插件添加自定义校验方法-->
+    <script src="../static/admin-lte/bower_components/select2/dist/js/select2.full.min.js" type="text/javascript">
+    </script>
+    <!--下拉框插件-->
+    <script src="../static/js/bootbox/bootbox.min.js" type="text/javascript"></script>
+    <!--一个小型的JavaScript库，基于Bootstrap模态框开发，用于创建可编程的对话框-->
+    <script type="text/javascript" src="../static/js/jquery.cookie/jquery.cookie.min.js"></script>
+    <!--cookie-->
+    <!-- END PAGE LEVEL PLUGINS -->
+    <script src="../static/admin-lte/dist/js/demo.js"></script>
+    <script src="../js/inputData.js"></script>
+    <!-- <script typr="text/javascript" src="../js/loginCheck.js"></script> -->
+    <script type="text/javascript" src="../js/login.js"></script>>
+</body>
+</html>

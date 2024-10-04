@@ -1,0 +1,515 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>后台数据录入</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../static/admin-lte/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../static/admin-lte/dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect. -->
+    <link rel="stylesheet" href="../static/admin-lte/dist/css/skins/skin-blue.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" tyle="text/css" href="../static/css/common.css">
+       <style>
+        a {
+            height: 50px
+        }
+
+        table td {
+            text-align: center;
+            vertical-align: middle
+        }
+
+        .short-table td {
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-blue fixed">
+    <div class="wrapper">
+        <!-- Main Header -->
+       <header class="main-header" style="height: 150px;">
+           <!-- Logo -->
+           <a href="" class="logo" style="background-color: #063c7c;width: 35  0px;height: 60px;">
+               <!-- mini logo for sidebar mini 50x50 pixels -->
+               <img src="../img/logo.png" style="width: 55px;height: 55px;">
+               <span style="font-size: 20px;font-weight: 600;height:60px;line-height:60px;">建筑节能设计基础数据共享平台</span>
+           </a>
+
+           <!-- 上边框 -->
+           <nav class="navbar navbar-static-top" role="navigation"
+               style="background-color: #063c7c;margin-left: 400px;">
+               <!-- Sidebar toggle button-->
+
+               <!-- 上边框右边菜单栏 -->
+               <div class="navbar-custom-menu">
+                   <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"
+                       style="margin-top:5px;height: 50px;">
+                       <span class="sr-only">Toggle navigation</span>
+                   </a>
+                   <div class="nav">
+                       <ul>
+                           <li><a href="index.html">平台首页</a></li>
+                           <li><a href="about.html">团队介绍</a></li>
+                           <li><a href="regest.html">注册</a></li>
+                           <li><a href="login.html">退出平台</a></li>
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+       </header>
+        <!-- 左侧导航栏菜单 -->
+         <!-- 左侧导航栏菜单 -->
+       <aside class="main-sidebar" style="padding-top:75px">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- 左侧导航栏菜单 -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <!-- Optionally, you can add icons to the links -->
+                    <li>
+                        <a href="javascript:location.href='mapInfo.html'" id="mapSearch" class="active "><i
+                                class="fa fa-search"></i><span>地图索引与台站查询</span></a>
+                    </li>
+                    <li><a href="javascript:location.href='http://buildingdata.xauat.edu.cn/TC-dataset/'"><i
+                        class="fa fa-database"></i><span>中国热舒适数据库</span></a></li>
+                    <li class="treeview" class="asidei">
+                        <a href="#"><i class="fa  fa-bar-chart-o"></i> <span>建筑气候设计数据</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a
+                                    href="javascript:location.href=addSession('basicClimate.html',theRequest['stationId'])"><i
+                                        class="fa fa-square"></i><span>城市基本气候特征</span></a>
+                            </li>
+                            <li>
+                                <a
+                                    href="javascript:location.href=addSession('OnlineAnalysis.html',theRequest['stationId'])"><i
+                                        class="fa fa-square"></i><span>在线建筑气候分析</span></a>
+                            </li>
+                            <li>
+                                <a
+                                    href="javascript:location.href=addSession('climateContrast.html',theRequest['stationId'])"><i
+                                        class="fa fa-square"></i><span>城市气候特征对比分析</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview menu-open">
+                        <a href="#"><i class="fa fa-calculator"></i> <span>建筑节能设计参数</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li class="treeview menu-open"><a href="#"><i class="fa fa-square"></i><span>室内参数</span><span
+                                        class="pull-right-container"><i
+                                            class="fa fa-angle-left pull-right"></i></span></a>
+                                <ul class="treeview-menu">
+                                    <li style="overflow: hidden;"><a
+                                            href="javascript:location.href=addSession('inWarmComfortable.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="室内热舒适基本要求">室内舒适基本要求</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a id="outRoom"
+                                            href="javascript:location.href=addSession('inHotDesignParams.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="热工设计用室内参数">热工设计用室内参数</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a id="outRoom"
+                                            href="javascript:location.href=addSession('indoorDesignParam.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="暖通空调设计用参数">暖通空调设计用室内参数</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a id="outRoom"
+                                            href="javascript:location.href=addSession('indoorComputeParam.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="模拟计算分析用参数">模拟计算分析用参数</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview"><a href="#"><i class="fa fa-square"></i><span>室外参数</span><span
+                                        class="pull-right-container"><i
+                                            class="fa fa-angle-left pull-right"></i></span></a>
+                                <ul class="treeview-menu">
+                                    <li style="overflow: hidden;"><a id="inRoom"
+                                            href="javascript:location.href=addSession('personHotdesign.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="热工设计用室外参数">热工设计用室外参数</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a id="outRoom"
+                                            href="javascript:location.href=addSession('personWarmWind.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span
+                                                title="供暖通风与空气调节设计室外用参数">暖通空调设计用室外参数</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview"><a href="#"><i class="fa fa-square"></i><span>建筑能耗模拟气象年</span><span
+                                        class="pull-right-container"><i
+                                            class="fa fa-angle-left pull-right"></i></span></a>
+                                <ul class="treeview-menu">
+                                    <li style="overflow: hidden;"><a
+                                            href="javascript:location.href=addSession('typicalMeteorologicalYear.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="典型气象年">典型气象年</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a
+                                            href="javascript:location.href=addSession('futureMeteorologicalYear.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="未来气象年">未来气象年</span></a>
+                                    </li>
+                                    <li style="overflow: hidden;"><a
+                                            href="javascript:location.href=addSession('extremeMeteorologicalYear.html',theRequest['stationId'])"><i
+                                                class="fa fa-circle"></i><span title="极端气象年">极端气象年</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:location.href='a.html'"><i class="fa fa-list-alt"></i>
+                            <span>数据接口</span></a></li>
+                    <li id="admin_input" style="display: none;"><a href="javascript:location.href=addSession('inputData.html',theRequest['stationId'])"><i
+                             class="fa fa-database"></i>
+                         <span>后台数据录入</span></a></li>
+                         <li id="admin_li" style="display: none;"><a href="javascript:location.href=addSession('management.html',theRequest['stationId'])" id="admin_a"><i class="fa fa-database" ></i>
+                         <span>管理员管理</span></a></li>
+
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- 主页面内容 -->
+        <div class="content-wrapper container-fluid" style="padding-top:65px;position: relative;">
+            <!-- Main content -->
+            <!--面包线-->
+
+            <!--end 面包线-->
+             <div style="margin: 20px 0 0 10px;height: 100px;">
+                <p style="font-weight: bold;margin-top: 15px;">第一步：请先选择上传数据类型</p>
+                <div class="col-md-2" id="data">
+                    <select class="form-control" id="datatype">
+                        <option>建筑节能设计参数</option>
+                    </select>
+                </div>
+                <div class="col-md-2" id="param">
+                    <select class="form-control" id="paramtype" onchange="liveSelected()">
+                        <option>室内参数</option>
+                        <option>室外参数</option>
+                        <option>建筑能耗模拟气象年</option>
+                    </select>
+                </div>
+                <div class="col-md-2" id="outerparam" style="display: none;">
+                    <select class="form-control" id="outerparamtype" onchange="chooseouterparam()">
+                        <option>热工设计用室外参数</option>
+                        <option>暖通空调设计室外用参数</option>
+                    </select>
+                </div>
+                <!-- 室外热工设计用室外参数 -->
+                <div class="col-md-2" id="outpersonhotparams" style="display: none;">
+                    <select class="form-control" id="outpersonhotparamstype">
+                        <option>自然通风设计室外计算参数</option>
+                        <option>建筑遮阳设计室外计算参数</option>
+                        <option>围护结构稳态保温防潮设计室外计算参数</option>
+                        <option>围护结构隔热设计室外计算参数</option>
+                        <option>围护结构动态保温设计室外计算参数</option>
+                        <option>围护结构热湿耦合计算室外计算参数</option>
+                    </select>
+                </div>
+                <!-- 室外供暖通风与空气调节设计室外用参数 -->
+                <div class="col-md-2" id="outpersonwarmwindparams" style="display: none;"
+                    onchange="chooseoutpersonwarmwind()">
+                    <select class="form-control" id="outpersonwarmwindparamstype">
+                        <option>多不保证率及多参数组合的室外计算参数</option>
+                        <option>冬夏季典型设计气象日参数</option>
+                        <option>同时发生室外计算参数</option>
+                    </select>
+                </div>
+                <!-- 冬夏季典型设计气象日的七个子表 -->
+                <div class="col-md-2" id="winsumtypdesignday" style="display: none;">
+                    <select class="form-control" id="winsumtypdesigndaytype">
+                        <option>冬季供暖室外计算参数</option>
+                        <option>冬季空调室外计算参数</option>
+                        <option>夏季空调室外计算参数</option>
+                        <option>夏季除湿室外计算参数</option>
+                        <option>冬季加湿室外计算参数</option>
+                        <option>夏季新风计算室外计算参数</option>
+                        <option>冬季新风计算室外计算参数</option>
+                    </select>
+                </div>
+                <!-- 室内参数 -->
+                <div class="col-md-2" id="innerparam" style="display: none;">
+                    <select class="form-control" id="innerparamtype" onchange="chooseinnerparam()">
+                        <option>室内热舒适基本要求</option>
+                        <option>热工设计用室内参数</option>
+                        <option>暖通空调设计用参数</option>
+                        <option>模拟计算分析用参数</option>
+                    </select>
+                </div>
+                <!-- 室内参数--室内舒适基本要求 -->
+                <div class="col-md-2" id="innerwarmcomfortableparams" style="display: none;">
+                    <select class="form-control" id="innerwarmcomfortableparamstype">
+                        <option>室内热环境分级</option>
+                        <option>室内热舒适建议</option>
+                        <option>局部热不舒适</option>
+                        <option>不同气候区室内温度设计</option>
+                        <option>不同建筑的操作温度</option>
+                    </select>
+                </div>
+                <!-- 室内参数--热工设计用室内参数 -->
+                <div class="col-md-2" id="innerhotdesignparams" style="display: none;">
+                    <select class="form-control" id="innerhotdesignparamstype">
+                        <option>非供暖房间保温设计室内计算参数</option>
+                        <option>非空调房间隔热设计室内计算参数</option>
+                        <option>供暖房间保温设计室内计算参数</option>
+                        <option>空调房间隔热设计室内计算参数</option>
+                        <option>自然通风设计室内计算参数</option>
+                    </select>
+                </div>
+                <!-- 气象年数据 -->
+                <div class="col-md-2" id="meteorologicalyear" style="display: none;">
+                    <select class="form-control" id="meteorologicalyeartype" onchange="choosemeteorologicalyear()">
+                        <option>典型气象年</option>
+                        <option>极端气象年</option>
+                        <option>未来气象年</option>
+                    </select>
+                </div>
+                <!-- 气象年--极端气象年参数 -->
+                <div class="col-md-2" id="extrememeteorologicalyear" style="display: none;">
+                    <select class="form-control" id="extrememeteorologicalyeartype">
+                        <option>空调负荷极端年</option>
+                        <option>室内过热极端年</option>
+                    </select>
+                </div>
+                 <!-- 未来年 --未来气象参数-->
+                 <div class="col-md-2" id="futureclimate" style="display: none;">
+                     <select class="form-control" id="futureclimatetype">
+                         <option>RCP45-2050</option>
+                         <option>RCP45-2099</option>
+                         <option>RCP85-2050</option>
+                         <option>RCP85-2099</option>
+                     </select>
+                 </div>
+            </div>
+            <!-- 上传按钮部分 -->
+            <div style="margin: 20px 0 0 10px;height: 100px;">
+                <p style="font-weight: bold;margin-top: 15px;">第二步：请下载数据模板</p>
+                <div> <button onclick='tableToExcel()'>导出示例</button></div>
+
+            </div>
+            <div style="margin: 20px 0 0 10px;height: 100px;">
+                <p style="font-weight: bold;margin-top: 15px;">第三步：请使用第二步中下载的模板，填好数据，点击上传</p>
+                <div> <button type="button" class="btn btn-success waves-effect" onclick="importExcel()"
+                        id="uploadExcel"><i class="material-icons"></i> <span>上传</span></button>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+    <div class="modal" id="showUserDialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top:2%;width:800px;">
+            <div id="modal-content" class="modal-content">
+                <div class="card">
+                    <div class="modal-header">
+                        <button type="button" class="close" onclick="closeModal()" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title title">上传Excel</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="file" name="file" id="fileUpload">
+                            </div>
+                            <button type="button" id="upload" class="btn btn-success">上传</button>
+                        </div>
+                        <div style="height:20px;line-height:20px">
+                            <div class="progress-bar" id="progress" role="progressbar" aria-valuenow="40"
+                                aroa-valuemin="0" ariva-valuemax="100" style="width:0%;margin:20px 0px 20px 0px">
+                                <font style="vertical-align:inherit;">
+                                    <font style="vertical-align:inherit;" id="fontSize" height:20px;>0%</font>
+                                </font>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div><b id="uploadState" style="display:none"></b></div>
+
+                            <div>
+                                <textarea id="console" style="width:750px;height:400px;resize:none">
+                            </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- REQUIRED JS SCRIPTS -->
+    <!-- jQuery 3 -->
+    <script src="../static/admin-lte/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="../js/ztree/jquery.ztree.core.js"></script> -->
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../static/admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="../static/admin-lte/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../static/admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../static/admin-lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../static/admin-lte/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../static/admin-lte/dist/js/adminlte.min.js"></script>
+        <script type="text/javascript" src="../js/loginCheck.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../static/admin-lte/dist/js/demo.js"></script>
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <!-- <script src="../js/inputData2.js"></script> -->
+    <script src="../js/inputData.js"></script>
+    <script type="text/javascript">
+        var table;
+        var searchFlag;
+        var pageFlag = false;
+
+        function closeDialog() {
+            $('#showUserDialog').modal('hide');
+        }
+
+        function importExcel() {
+            $('#showUserDialog').modal({
+                show: true,
+                // backdrop: 'static'
+            });
+        }
+
+        function closeModal() {
+            $('#showUserDialog').modal('hide');
+            window.location.reload();
+        }
+
+
+
+        $(function () {
+            // $('#fileUpload').click(function(){
+            //     var name =$("#fileUpload")[0].files[0];
+            //     if(!name){
+            //         $("#uploadExcel").attr("disabled",false);
+            //     }
+            // })
+
+
+            //     $("#upload").on('click', function(){
+            //          var formData = new FormData();
+            //          var name = $("#fileUpload").val();
+            //         var fileName=$("#fileUpload")[0].files[0];
+
+            //         if(fileName==undefined){
+            //             $("#console").html("请先选择正确的导入文件");
+            //         }
+            //         else{
+            //             var point=fileName.name.lastIndexOf(".");
+            //             var type=fileName.name.substr(point);
+
+            //             if(type==".xls"||type==".xlsx"){
+            //                 $("#console").html("");
+            //                 $("#showUserDialog").attr("disabled","disabled");
+            //                 formData.append("file",$("#fileUpload")[0].files[0]);
+            //                 formData.append("name",name);//这个地方可以传递多个参数
+            //                 var contextPath = "http://localhost:8080/building";
+            //                 if($("#paramtype option:checked").text()=='室外参数'){
+            //                     console.log("室外参数")
+            //                    $('#outerparam').show();
+            //                    $.ajax({
+            //                     url : contextPath + "/importtcb/uploadtcb",
+            //                     type : 'POST',
+            //                     dataType: "json",
+            //                     async : false,
+            //                     data : formData,
+            //                     processData : false,
+            //                     contentType : false,
+            //                     success : function(result) {
+            //                         console.log(result);
+            //                         $("#uploadState").prepend(result.count);
+            //                         $("#console").prepend(result.message+"\n");
+            //                     }
+            //                     });                
+            //                     var timer = setInterval(function() {
+            //                         $.ajax({
+            //                             url : contextPath + "/importtcb/test",
+            //                             dataType: "json",
+            //                             success : function(result) {
+            //                                 $("#progress").width(result.flag+"%");
+            //                                 $("#fontSize").html(result.flag+"%");
+            //                                 if (result.code ==1) {
+            //                                     clearInterval(timer);
+            //                                 }
+            //                                 if(result.flag==100){
+            //                                       $("#uploadState").show();
+            //                                 }
+            //                             }
+            //                         });
+            //                     }, 200);
+            //                 }
+            //                 else if($("#paramtype option:checked").text()=='建筑能耗模拟气象年'){
+            //                     console.log("建筑能耗模拟气象年");
+            //                     console.log(formData);
+            //                     $('#outerparam').hide();
+            //                     $.ajax({
+            //                     url : contextPath + "/importmeteorological/uploadmeteorological",
+            //                     type : 'POST',
+            //                     dataType: "json",
+            //                     async : false,
+            //                     data : formData,
+            //                     processData : false,
+            //                     contentType : false,
+            //                     success : function(result) {
+            //                         console.log(result);
+            //                         $("#uploadState").prepend(result.count);
+            //                         $("#console").prepend(result.message+"\n");
+            //                     }
+            //                     });                
+            //                     var timer = setInterval(function() {
+            //                         $.ajax({
+            //                             url : contextPath + "/importmeteorological/flag",
+            //                             dataType: "json",
+            //                             success : function(result) {
+            //                                 $("#progress").width(result.flag+"%");
+            //                                 $("#fontSize").html(result.flag+"%");
+            //                                 if (result.code ==1) {
+            //                                     clearInterval(timer);
+            //                                 }
+            //                                 if(result.flag==100){
+            //                                       $("#uploadState").show();
+            //                                 }
+            //                             }
+            //                         });
+            //                     }, 200);
+            //                 }
+
+            //             }
+            //             else{
+            //                 $("#console").html("请先选择正确的导入文件");
+            //             }
+            //         }
+
+            //     });
+        });
+
+        
+    </script>
+</body>
+
+</html>
