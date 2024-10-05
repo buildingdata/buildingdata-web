@@ -5,16 +5,19 @@
 </p>
 <p align="center">
   <a href="https://buildingdata.xauat.edu.cn/">
-  	<img alt="buildingdata" src="https://img.shields.io/badge/LEB Platform-063c7c?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVQ4jZ3UPU8UURjF8d8ubwmhopGAQKSDymhjQWm30hEbwkthgV9AQkUJFq5+AyVsIYXfwspADRWSYAMfgIIQH4qdjZv1zp1lT3Izd86c88/cZJ6pRYQ+9BY1HFcmI6JqvYl/WqnKV8Ga8b+agwCfRcRpAtbRaUQs9AvcyIB6tVkF/PYIWEeHKeCLiLgYANbR74JBRGxXhP9ExExEzEbEVUX2fR0rma/qEk/xCg3M4jyTbwzjOhNYwBpaxf0cFlE2DTf1DOxzUWx1ebuYLq4p1XLAA6wm/H18Len8zQFv8DrhL2u/+X3i2V0OCGMJ7x4j2j+LXmWPPIFfCf8E4xhKlXLALRwm/D08LyvlgJ9wi6Mev4GdQYCj+IgNnHX5X/CyrFPHkwz0A9axhO+ZXEdTw/ihfFrGMVns32mP3XwG+PMBYdAQPwkBdngAAAAASUVORK5CYII=&logoColor=white" />
+  	<img alt="buildingdata" src="https://img.shields.io/badge/LEB Platform-063c7c?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVQ4jZ3UPU8UURjF8d8ubwmhopGAQKSDymhjQWm30hEbwkthgV9AQkUJFq5+AyVsIYXfwspADRWSYAMfgIIQH4qdjZv1zp1lT3Izd86c88/cZJ6pRYQ+9BY1HFcmI6JqvYl/WqnKV8Ga8b+agwCfRcRpAtbRaUQs9AvcyIB6tVkF/PYIWEeHKeCLiLgYANbR74JBRGxXhP9ExExEzEbEVUX2fR0rma/qEk/xCg3M4jyTbwzjOhNYwBpaxf0cFlE2DTf1DOxzUWx1ebuYLq4p1XLAA6wm/H18Len8zQFv8DrhL2u/+X3i2V0OCGMJ7x4j2j+LXmWPPIFfCf8E4xhKlXLALRwm/D08LyvlgJ9wi6Mev4GdQYCj+IgNnHX5X/CyrFPHkwz0A9axhO+ZXEdTw/ihfFrGMVns32mP3XwG+PMBYdAQPwkBdngAAAAASUVORK5CYII=&logoColor=white" />
   </a>
   <a href="https://github.com/buildingdata">
-  	<img alt="Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+  	<img alt="Github" src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white" />
   </a>
-	<a href="https://github.com/buildingdata/buildingdata-web/blob/master/LICENSE">
-  	<img alt="License" src="https://img.shields.io/github/license/buildingdata/buildingdata-web.svg?style=for-the-badge" />
+  <a href="https://github.com/buildingdata/buildingdata-web/blob/master/LICENSE">
+  	<img alt="License" src="https://img.shields.io/github/license/buildingdata/buildingdata-web.svg?style=flat" />
   </a>
-    <a href="https://github.com/buildingdata/buildingdata-web/releases">
-  	<img src="https://img.shields.io/github/v/release/buildingdata/buildingdata-web?label=version&style=for-the-badge" />
+  <a href="https://github.com/buildingdata/buildingdata-web/releases">
+  	<img src="https://img.shields.io/github/v/release/buildingdata/buildingdata-web?label=version&style=flat" />
+  </a>
+  <a href="https://doi.org/10.5281/zenodo.13892249">
+  	<img src="https://zenodo.org/badge/785646655.svg" />
   </a>
 </p>
 
